@@ -1,0 +1,283 @@
+================================================================================
+PROPRIETARY LICENSE / LICENCE PROPRIÉTAIRE / PROPRIETAIRE LICENTIE
+================================================================================
+Version 1.1 — 2025-12-22
+
+Author / Auteur / Auteur:       Régis SCYEUR — Zebra Puma Services
+Address / Adresse / Adres:     Rue de la Sarthe, 8a, B-4217 Héron, Belgique
+Tel:                             +32 496 56 07 17
+VAT / TVA / BTW:               BE 0505.957.938
+Contact:                         license@zebrapuma.be
+
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+FRANÇAIS
+────────────────────────────────────────────────────────────────────────────────
+
+1. PROPRIÉTÉ INTELLECTUELLE
+
+Ce logiciel, y compris son code source, sa documentation, ses algorithmes, 
+son architecture et tout élément associé, est la propriété exclusive de 
+l'auteur mentionné ci-dessus.  Tous droits sont réservés conformément au 
+droit belge et aux conventions internationales sur la propriété intellectuelle. 
+
+
+2. LICENCE ET RESTRICTIONS
+
+Sauf autorisation écrite explicite de l'auteur, aucune permission n'est 
+accordée pour utiliser, intégrer, copier, modifier, fusionner, publier, 
+distribuer, vendre, louer, prêter, sous-licencier, proposer en tant que 
+service (SaaS), ou exploiter de quelque manière que ce soit, en tout ou 
+en partie, ce logiciel. 
+
+Il est expressément interdit de : 
+  a) Décompiler, désassembler ou procéder à l'ingénierie inverse 
+     (reverse engineering) de ce logiciel ;
+  b) Extraire ou réutiliser des portions de code, algorithmes ou méthodes ;
+  c) Contourner les mécanismes de protection technique ;
+  d) Utiliser le logiciel dans un cadre de production sans licence valide.
+
+
+3. ÉVALUATIONS ET LICENCES COMMERCIALES
+
+L'auteur peut, à sa seule discrétion, accorder une licence d'évaluation 
+non transférable et limitée dans le temps (généralement 30 jours). 
+
+Toute utilisation au-delà de l'évaluation nécessite un contrat de licence 
+commerciale valide avec l'auteur précisant : 
+  • La durée de la licence
+  • Le nombre d'utilisateurs ou d'installations autorisés
+  • Les tarifs applicables
+  • Les conditions de support et de mise à jour
+
+Les mises à jour mineures (correctifs de bugs) sont incluses pendant la 
+durée de validité de la licence.  Les mises à jour majeures peuvent nécessiter 
+un renouvellement de licence ou un supplément tarifaire. 
+
+
+4. AUDIT ET CONFORMITÉ
+
+L'auteur se réserve le droit de vérifier, moyennant un préavis raisonnable 
+de 15 jours ouvrables, la conformité de l'utilisation du logiciel avec les 
+termes de la licence accordée.  Le licencié s'engage à coopérer et à fournir 
+les informations nécessaires lors de cet audit.
+
+En cas de non-conformité constatée, le licencié devra : 
+  a) Régulariser sa situation dans un délai de 30 jours ;
+  b) Acquitter les licences manquantes avec majoration de 50% ;
+  c) Cesser immédiatement toute utilisation non autorisée. 
+
+
+5. GARANTIE ET RESPONSABILITÉ
+
+LE LOGICIEL EST FOURNI « EN L'ÉTAT », SANS AUCUNE GARANTIE EXPRESSE OU 
+IMPLICITE, Y COMPRIS MAIS SANS S'Y LIMITER, LES GARANTIES DE QUALITÉ 
+MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER ET D'ABSENCE DE CONTREFAÇON. 
+
+EN AUCUN CAS L'AUTEUR NE POURRA ÊTRE TENU RESPONSABLE DE DOMMAGES DIRECTS 
+OU INDIRECTS, CONSÉCUTIFS OU SPÉCIAUX, DE PERTE DE PROFITS, DE DONNÉES, 
+D'INTERRUPTION D'ACTIVITÉ OU DE TOUT AUTRE PRÉJUDICE RÉSULTANT DE 
+L'UTILISATION OU DE L'IMPOSSIBILITÉ D'UTILISER CE LOGICIEL, MÊME SI 
+L'AUTEUR A ÉTÉ INFORMÉ DE LA POSSIBILITÉ DE TELS DOMMAGES. 
+
+
+6. RÉSILIATION
+
+Toute violation des termes de cette licence entraîne sa résiliation 
+automatique et immédiate. En cas de résiliation : 
+  a) Le licencié doit cesser immédiatement toute utilisation du logiciel ;
+  b) Le licencié doit détruire toutes les copies en sa possession ;
+  c) Aucun remboursement ne sera accordé ;
+  d) L'auteur se réserve le droit de poursuites judiciaires. 
+
+
+7. DROIT APPLICABLE ET JURIDICTION
+
+Le présent accord est régi par le droit belge.  Tout litige sera soumis 
+à la compétence exclusive des tribunaux de l'arrondissement judiciaire 
+de Liège, Belgique. 
+
+Pour une licence commerciale : license@zebrapuma.be
+
+
+────────────────────────────────────────────────────────────────────────────────
+NEDERLANDS
+────────────────────────────────────────────────────────────────────────────────
+
+1. INTELLECTUELE EIGENDOM
+
+Deze software, inclusief de broncode, documentatie, algoritmen, architectuur 
+en alle bijbehorende materialen, is het exclusieve eigendom van de hierboven 
+vermelde auteur. Alle rechten voorbehouden in overeenstemming met het 
+Belgisch recht en internationale verdragen inzake intellectuele eigendom. 
+
+
+2. LICENTIE EN BEPERKINGEN
+
+Tenzij de auteur uitdrukkelijk schriftelijk toestemming geeft, wordt geen 
+enkele toestemming verleend om deze software, geheel of gedeeltelijk, voor 
+enig doel te gebruiken, integreren, kopiëren, wijzigen, samenvoegen, 
+publiceren, distribueren, verkopen, verhuren, uitlenen, in sublicentie 
+geven, als dienst aanbieden (SaaS), of op welke wijze dan ook exploiteren. 
+
+Het is uitdrukkelijk verboden om: 
+  a) De software te decompileren, disassembleren of reverse engineering 
+     toe te passen;
+  b) Delen van code, algoritmen of methoden te extraheren of hergebruiken;
+  c) Technische beveiligingsmechanismen te omzeilen;
+  d) De software in een productieomgeving te gebruiken zonder geldige licentie.
+
+
+3. EVALUATIE EN COMMERCIËLE LICENTIES
+
+Naar eigen inzicht van de auteur kan een niet-overdraagbare, tijdsgebonden 
+evaluatielicentie worden verleend (gewoonlijk 30 dagen).
+
+Elk gebruik buiten evaluatie vereist een geldige commerciële licentie-
+overeenkomst met de auteur waarin wordt gespecificeerd:
+  • De duur van de licentie
+  • Het aantal geautoriseerde gebruikers of installaties
+  • De toepasselijke prijzen
+  • De voorwaarden voor ondersteuning en updates
+
+Kleine updates (bugfixes) zijn inbegrepen tijdens de geldigheidsperiode 
+van de licentie.  Grote updates kunnen verlenging van de licentie of een 
+meerprijs vereisen.
+
+
+4. AUDIT EN NALEVING
+
+De auteur behoudt zich het recht voor om, met een redelijke opzegtermijn 
+van 15 werkdagen, de naleving van het softwaregebruik met de voorwaarden 
+van de verleende licentie te controleren. De licentienemer verbindt zich 
+ertoe mee te werken en de nodige informatie te verstrekken tijdens deze audit.
+
+In geval van vastgestelde niet-naleving moet de licentienemer:
+  a) Zijn situatie binnen 30 dagen regulariseren;
+  b) Ontbrekende licenties betalen met een toeslag van 50%;
+  c) Onmiddellijk elk ongeautoriseerd gebruik stopzetten.
+
+
+5. GARANTIE EN AANSPRAKELIJKHEID
+
+DE SOFTWARE WORDT GELEVERD "AS IS", ZONDER ENIGE EXPLICIETE OF IMPLICIETE 
+GARANTIE, INCLUSIEF MAAR NIET BEPERKT TOT GARANTIES VAN VERKOOPBAARHEID, 
+GESCHIKTHEID VOOR EEN BEPAALD DOEL EN NIET-INBREUK. 
+
+DE AUTEUR IS IN GEEN GEVAL AANSPRAKELIJK VOOR ENIGE DIRECTE OF INDIRECTE 
+SCHADE, GEVOLG-, SPECIALE OF BIJZONDERE SCHADE, WINSTDERVING, GEGEVENSVERLIES, 
+BEDRIJFSONDERBREKING OF ENIGE ANDERE SCHADE VOORTVLOEIEND UIT HET GEBRUIK 
+OF DE ONMOGELIJKHEID OM DEZE SOFTWARE TE GEBRUIKEN, ZELFS ALS DE AUTEUR 
+OP DE HOOGTE WAS VAN DE MOGELIJKHEID VAN DERGELIJKE SCHADE. 
+
+
+6. BEËINDIGING
+
+Elke schending van de voorwaarden van deze licentie leidt tot automatische 
+en onmiddellijke beëindiging. In geval van beëindiging:
+  a) Moet de licentienemer onmiddellijk elk gebruik van de software stopzetten;
+  b) Moet de licentienemer alle kopieën in zijn bezit vernietigen;
+  c) Wordt geen terugbetaling verleend;
+  d) Behoudt de auteur zich het recht voor om gerechtelijke stappen te ondernemen. 
+
+
+7. TOEPASSELIJK RECHT EN JURISDICTIE
+
+Deze overeenkomst wordt beheerst door het Belgisch recht. Geschillen worden 
+voorgelegd aan de exclusieve bevoegdheid van de rechtbanken van het 
+gerechtelijk arrondissement Luik, België.
+
+Voor een commerciële licentie:  license@zebrapuma.be
+
+
+────────────────────────────────────────────────────────────────────────────────
+ENGLISH
+────────────────────────────────────────────────────────────────────────────────
+
+1. INTELLECTUAL PROPERTY
+
+This software, including its source code, documentation, algorithms, 
+architecture, and all associated materials, is the exclusive property of 
+the author identified above. All rights reserved in accordance with Belgian 
+law and international intellectual property conventions.
+
+
+2. LICENSE AND RESTRICTIONS
+
+Unless expressly authorized in writing by the author, no permission is 
+granted to use, integrate, copy, modify, merge, publish, distribute, sell, 
+rent, lend, sublicense, provide as a service (SaaS), or otherwise exploit, 
+in whole or in part, this software for any purpose.
+
+It is expressly prohibited to:
+  a) Decompile, disassemble, or reverse engineer this software;
+  b) Extract or reuse portions of code, algorithms, or methods;
+  c) Circumvent technical protection mechanisms;
+  d) Use the software in a production environment without a valid license.
+
+
+3. EVALUATION AND COMMERCIAL LICENSES
+
+At the author's sole discretion, a non-transferable, time-limited evaluation 
+license may be granted (typically 30 days).
+
+Any use beyond evaluation requires a valid commercial license agreement with 
+the author specifying:
+  • License duration
+  • Number of authorized users or installations
+  • Applicable pricing
+  • Support and update terms
+
+Minor updates (bug fixes) are included during the license validity period. 
+Major updates may require license renewal or additional fees.
+
+
+4. AUDIT AND COMPLIANCE
+
+The author reserves the right to verify, with reasonable notice of 15 business 
+days, compliance of the software use with the terms of the granted license. 
+The licensee agrees to cooperate and provide necessary information during 
+such audits.
+
+In case of non-compliance, the licensee must: 
+  a) Rectify the situation within 30 days;
+  b) Pay for missing licenses with a 50% surcharge;
+  c) Immediately cease any unauthorized use.
+
+
+5. WARRANTY AND LIABILITY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, 
+INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE, AND NON-INFRINGEMENT. 
+
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, 
+SPECIAL, OR INCIDENTAL DAMAGES, LOSS OF PROFITS, LOSS OF DATA, BUSINESS 
+INTERRUPTION, OR ANY OTHER LOSS ARISING FROM THE USE OF OR INABILITY TO USE 
+THIS SOFTWARE, EVEN IF THE AUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF 
+SUCH DAMAGES.
+
+
+6. TERMINATION
+
+Any violation of the terms of this license results in automatic and immediate 
+termination. Upon termination:
+  a) The licensee must immediately cease all use of the software;
+  b) The licensee must destroy all copies in their possession;
+  c) No refund will be granted;
+  d) The author reserves the right to pursue legal action.
+
+
+7. GOVERNING LAW AND JURISDICTION
+
+This agreement is governed by Belgian law. Disputes shall be submitted to 
+the exclusive jurisdiction of the courts of the judicial district of Liège, 
+Belgium.
+
+For commercial licensing: license@zebrapuma.be
+
+
+================================================================================
+END OF LICENSE / FIN DE LICENCE / EINDE VAN LICENTIE
+================================================================================
