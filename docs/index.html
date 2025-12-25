@@ -144,27 +144,37 @@
 <li><strong>.NET 10.0 SDK</strong> pour les applications .NET modernes</li>
 <li><strong>Visual Studio 2022</strong> (recommandé) ou Visual Studio Code</li>
 </ul>
-<h3 id="installation">Installation</h3>
+<h3 id="installation-via-nuget">Installation via NuGet</h3>
+<pre><code class="lang-bash"># 1. Ajouter le source GitHub Packages
+dotnet nuget add source https://nuget.pkg.github.com/ZebraPumaOrg/index.json \
+  --name ZebraPuma \
+  --username VOTRE_USERNAME \
+  --password VOTRE_GITHUB_PAT
+
+# 2. Installer les packages
+dotnet add package ZebraPuma.Plugins --version 2.0.6
+dotnet add package ZebraPuma.System.ServiceProcess --version 2.0.6
+</code></pre>
+<p><strong>Authentification GitHub Packages</strong> :</p>
 <ol>
-<li><p><strong>Cloner le dépôt</strong> :</p>
-<pre><code class="lang-bash">git clone https://github.com/ZebraPumaOrg/ZebraPuma.git
-cd ZebraPuma
-</code></pre>
-</li>
-<li><p><strong>Ouvrir la solution</strong> :</p>
-<pre><code class="lang-bash">cd src\dotnet
-start ZebraPuma.sln
-</code></pre>
-</li>
-<li><p><strong>Restaurer les packages NuGet</strong> :</p>
-<pre><code class="lang-bash">dotnet restore
-</code></pre>
-</li>
-<li><p><strong>Compiler la solution</strong> :</p>
-<pre><code class="lang-bash">dotnet build
-</code></pre>
-</li>
+<li>Créez un <a href="https://github.com/settings/tokens">Personal Access Token (PAT)</a> avec le scope <code>read:packages</code></li>
+<li>Utilisez votre username GitHub et le PAT comme mot de passe</li>
 </ol>
+<h3 id="configuration-nugetconfig-optionnel">Configuration nuget.config (Optionnel)</h3>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration&gt;
+  &lt;packageSources&gt;
+    &lt;add key=&quot;nuget.org&quot; value=&quot;https://api.nuget.org/v3/index.json&quot; /&gt;
+    &lt;add key=&quot;ZebraPuma&quot; value=&quot;https://nuget.pkg.github.com/ZebraPumaOrg/index.json&quot; /&gt;
+  &lt;/packageSources&gt;
+  &lt;packageSourceCredentials&gt;
+    &lt;ZebraPuma&gt;
+      &lt;add key=&quot;Username&quot; value=&quot;VOTRE_USERNAME&quot; /&gt;
+      &lt;add key=&quot;ClearTextPassword&quot; value=&quot;VOTRE_PAT&quot; /&gt;
+    &lt;/ZebraPuma&gt;
+  &lt;/packageSourceCredentials&gt;
+&lt;/configuration&gt;
+</code></pre>
 <h3 id="utilisation-de-base">Utilisation de Base</h3>
 <h4 id="créer-un-plugin-simple">Créer un Plugin Simple</h4>
 <pre><code class="lang-csharp">using ZebraPuma.Plugins;
@@ -393,13 +403,14 @@ dotnet test --collect:&quot;XPlat Code Coverage&quot;
 <hr>
 <h2 id="-liens-utiles">🔗 Liens Utiles</h2>
 <ul>
-<li><a href="https://zebrapuma.services">Site Web ZebraPuma</a></li>
-<li><a href="https://github.com/ZebraPumaOrg">GitHub Organization</a></li>
-<li><a href="https://github.com/ZebraPumaOrg/ZebraPuma-Packages">Packages ZebraPuma</a></li>
-<li><a href="https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages">Packages NuGet publics</a></li>
-<li><a href="api/">Documentation API</a></li>
-<li><a href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/LICENSE">Licence</a></li>
+<li>📦 <a href="https://github.com/ZebraPumaOrg/ZebraPuma-Packages">Repository des Packages</a></li>
+<li>📚 <a href="https://zebrapumaorg.github.io/ZebraPuma-Packages/">Documentation Complète</a></li>
+<li>🔐 <a href="https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages">Packages NuGet</a></li>
+<li>📄 <a href="api/">Référence API</a></li>
+<li>📜 <a href="https://github.com/ZebraPumaOrg/ZebraPuma-Packages/blob/main/LICENSE">Licence</a></li>
 </ul>
+<hr>
+<p><strong>ℹ️ Note :</strong> Le code source de développement est dans un repository privé. Seuls les packages NuGet compilés et la documentation sont publics.</p>
 <hr>
 <p><strong>Made with ❤️ by Régis SCYEUR, Zebra Puma Services</strong></p>
 

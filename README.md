@@ -1,59 +1,144 @@
-# ZebraPuma-Packages
-This repository hosts the NuGet packages for ZebraPuma libraries via GitHub Packages.
+# Zebra Puma Framework
 
-[![.NET Framework 4.8](https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg)](https://dotnet.microsoft.com/download/dotnet-framework/net48)
-[![.NET](https://img.shields.io/badge/.NET-10.0-purple.svg)](https://dotnet.microsoft.com/download/dotnet/10.0)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://zebrapumaorg.github.io/ZebraPuma-Packages/)
+[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages)
+[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages)
+[![License](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
 
-## 📦 Available Packages
+> Services & Plugins pour Windows et .NET
 
-- **ZebraPuma.Plugins** - Base plugin system library
-- **ZebraPuma.System.ServiceProcess** - Windows Services and Windows Forms management
-
-## 🔧 Installation
-
-### 1. Configure GitHub Packages source
-dotnet nuget add source https://nuget.pkg.github.com/ZebraPumaOrg/index.json 
--n "ZebraPuma" 
--u "YOUR_GITHUB_USERNAME" 
--p "YOUR_GITHUB_TOKEN" 
---store-password-in-clear-text
-
-
-Replace `YOUR_GITHUB_USERNAME` and `YOUR_GITHUB_TOKEN` with your GitHub credentials.
-
-### 2. Install packages
-
-dotnet add package ZebraPuma.Plugins --version 2.0.0 dotnet add package ZebraPuma.System.ServiceProcess --version 2.0.0
-
-
-## 🔑 GitHub Personal Access Token
-
-To access these packages, you need a GitHub Personal Access Token with `read:packages` scope.
-
-Create one here: https://github.com/settings/tokens
+Framework .NET pour créer des applications modulaires avec système de plugins et services Windows avancés.
 
 ## 📚 Documentation
 
-For more information, see the [ZebraPuma repository](https://github.com/ZebraPumaOrg/ZebraPuma).
+**[📖 Consultez la documentation complète →](https://zebrapumaorg.github.io/ZebraPuma-Packages/)**
 
+## 📦 Packages Disponibles
 
+| Package | Version | Description |
+|---------|---------|-------------|
+| **ZebraPuma.Plugins** | ![Version](https://img.shields.io/badge/version-2.0.6-green) | Système de plugins extensible |
+| **ZebraPuma.System.ServiceProcess** | ![Version](https://img.shields.io/badge/version-2.0.6-green) | Extensions pour services Windows |
 
+## 🚀 Installation
 
+### 1. Configurer le Source NuGet
 
+```bash
+dotnet nuget add source https://nuget.pkg.github.com/ZebraPumaOrg/index.json \
+  --name ZebraPuma \
+  --username VOTRE_USERNAME \
+  --password VOTRE_GITHUB_PAT
+```
 
-## Licensing / Licence / Licentie
+**Créer un Personal Access Token (PAT) :**
+1. GitHub → Settings → Developer settings → [Personal access tokens](https://github.com/settings/tokens)
+2. Generate new token (classic)
+3. Sélectionner : `read:packages`
+4. Copier le token
 
-**Proprietary — All rights reserved.**  
-Commercial use requires a paid license.
+### 2. Installer les Packages
 
-**Propriétaire — Tous droits réservés.**  
-Toute utilisation commerciale nécessite une licence payante.
+```bash
+# Plugins
+dotnet add package ZebraPuma.Plugins --version 2.0.6
 
-**Proprietair — Alle rechten voorbehouden.**  
-Commercieel gebruik vereist een betaalde licentie.
+# Services Windows
+dotnet add package ZebraPuma.System.ServiceProcess --version 2.0.6
+```
 
-[📄 Voir le fichier de licence complet / See full license file / Zie volledig licentiebestand](LICENSE)
+### 3. Configuration `nuget.config` (Optionnel)
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+    <add key="ZebraPuma" value="https://nuget.pkg.github.com/ZebraPumaOrg/index.json" />
+  </packageSources>
+  <packageSourceCredentials>
+    <ZebraPuma>
+      <add key="Username" value="VOTRE_USERNAME" />
+      <add key="ClearTextPassword" value="VOTRE_PAT" />
+    </ZebraPuma>
+  </packageSourceCredentials>
+</configuration>
+```
+
+## 🎯 Démarrage Rapide
+
+### ZebraPuma.Plugins
+
+```csharp
+using ZebraPuma.Plugins;
+
+// Charger les plugins
+var loader = new PluginLoader();
+var plugins = loader.LoadPlugins<IPlugin>();
+
+foreach (var plugin in plugins)
+{
+    plugin.Initialize(context);
+    plugin.Execute();
+}
+```
+
+### ZebraPuma.System.ServiceProcess
+
+```csharp
+using ZebraPuma.System.ServiceProcess;
+
+public class MonService : ServiceBaseExtended
+{
+    public override string Name => "MonService";
+    
+    protected override void OnStartCore(string[] args)
+    {
+        Logger.Information("Service démarré");
+    }
+    
+    protected override void OnStopCore()
+    {
+        Logger.Information("Service arrêté");
+    }
+}
+
+// Installation du service
+ServiceManager.InstallService(new MonService());
+```
+
+## 📖 Guides
+
+- [Guide Plugins](https://zebrapumaorg.github.io/ZebraPuma-Packages/articles/plugins.html) - Architecture, chargement, cycle de vie
+- [Guide Services Windows](https://zebrapumaorg.github.io/ZebraPuma-Packages/articles/serviceprocess.html) - Création, déploiement, gestion
+- [Référence API](https://zebrapumaorg.github.io/ZebraPuma-Packages/api/) - Documentation complète de l'API
+
+## 🔗 Liens Utiles
+
+- 📦 [Packages NuGet](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages)
+- 📚 [Documentation](https://zebrapumaorg.github.io/ZebraPuma-Packages/)
+- 📄 [Licence](LICENSE)
+- 🐛 [Issues](https://github.com/ZebraPumaOrg/ZebraPuma-Packages/issues)
+
+## 🛠️ Technologies
+
+- **.NET Framework 4.8** - Support des applications legacy
+- **.NET 10.0** - Support moderne et cross-platform
+- **Windows Services** - Services natifs Windows
+- **Plugin Architecture** - Système modulaire extensible
+
+## 📄 Licence
+
+**Propriétaire** - © 2025-2026 Régis SCYEUR, Zebra Puma Services
+
+Tous droits réservés. L'utilisation commerciale nécessite une licence payante.
+
+Voir [LICENSE](LICENSE) pour plus de détails.
+
+## 👤 Auteur
+
+**Régis SCYEUR** - Zebra Puma Services
 
 ---
 
-
+Made with ❤️ by Régis SCYEUR, Zebra Puma Services
