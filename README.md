@@ -1,11 +1,9 @@
 # Zebra Puma Framework
 
-[![pages-build-deployment](https://github.com/ZebraPumaOrg/ZebraPuma-Packages/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/ZebraPumaOrg/ZebraPuma-Packages/actions/workflows/pages/pages-build-deployment)
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://zebrapumaorg.github.io/ZebraPuma-Packages/)
 [![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages)
 [![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
-
 
 > Services & Plugins pour Windows et .NET
 
