@@ -1,0 +1,336 @@
+{
+  "source_base_path": "D:/a/ZebraPuma/ZebraPuma/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "BUILD.md",
+      "output": {
+        ".html": {
+          "relative_path": "BUILD.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.Plugins.IPlugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.Plugins.IPlugin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.Plugins.IPlugin",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.Plugins.IPlugin.yml\" sourcestartlinenumber=\"1\">Interface de base pour tous les plugins chargés par le système.\nDéfinit le contrat minimum que chaque plugin doit respecter.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.Plugins.IPluginContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.Plugins.IPluginContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.Plugins.IPluginContext",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.Plugins.IPluginContext.yml\" sourcestartlinenumber=\"1\">Contexte d'initialisation fourni au plugin lors de son chargement.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.Plugins.PluginBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.Plugins.PluginBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.Plugins.PluginBase",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.Plugins.PluginBase.yml\" sourcestartlinenumber=\"1\">Classe de base abstraite pour simplifier l'implémentation de plugins.\nFournit une implémentation par défaut de IPlugin avec gestion du Dispose pattern.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.Plugins.PluginConfigLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.Plugins.PluginConfigLoader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.Plugins.PluginConfigLoader",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.Plugins.PluginLoader.PluginLoadingOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.Plugins.PluginLoader.PluginLoadingOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.Plugins.PluginLoader.PluginLoadingOptions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.Plugins.PluginLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.Plugins.PluginLoader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.Plugins.PluginLoader",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.Plugins.PluginLoader.yml\" sourcestartlinenumber=\"1\">Generic plugin loader based on a plugins.json configuration file and optional auto-discovery.\nThis is extracted from ZebraPuma.ServiceProcess.Helper to be reusable across projects.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.Plugins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.Plugins.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.Plugins",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.IServiceExtended.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.IServiceExtended.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess.IServiceExtended",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.System.ServiceProcess.IServiceExtended.yml\" sourcestartlinenumber=\"1\">Interface pour les services Windows extensibles basés sur le système de plugins ZebraPuma.\nÉtend <xref href=\"ZebraPuma.Plugins.IPlugin\" data-throw-if-not-resolved=\"false\"></xref> avec des fonctionnalités de gestion de cycle de vie de service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceBaseExtended.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceBaseExtended.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess.ServiceBaseExtended",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.System.ServiceProcess.ServiceBaseExtended.yml\" sourcestartlinenumber=\"1\">Classe de base abstraite pour créer des services Windows extensibles avec support de plugins.\nCombine <xref href=\"System.ServiceProcess.ServiceBase\" data-throw-if-not-resolved=\"false\"></xref> de Windows avec <xref href=\"ZebraPuma.System.ServiceProcess.IServiceExtended\" data-throw-if-not-resolved=\"false\"></xref>.\nGère automatiquement le cycle de vie et la synchronisation thread-safe.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceControllerForm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceControllerForm.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess.ServiceControllerForm",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess.ServiceDefinition",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.System.ServiceProcess.ServiceDefinition.yml\" sourcestartlinenumber=\"1\">Définit les métadonnées d'un service Windows pour la configuration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess.ServiceFactory",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.System.ServiceProcess.ServiceFactory.yml\" sourcestartlinenumber=\"1\">Factory pour créer et charger des services à partir d'un fichier de configuration JSON.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceManager.PluginLoadingOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceManager.PluginLoadingOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess.ServiceManager.PluginLoadingOptions",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.System.ServiceProcess.ServiceManager.PluginLoadingOptions.yml\" sourcestartlinenumber=\"1\">Options de configuration pour le chargement des services via plugins.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess.ServiceManager",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.System.ServiceProcess.ServiceManager.yml\" sourcestartlinenumber=\"1\">Gestionnaire centralisé pour administrer plusieurs services Windows.\nPermet le démarrage, l'arrêt et le rechargement dynamique des services via plugins.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceStateChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.ServiceStateChangedEventArgs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess.ServiceStateChangedEventArgs",
+      "Summary": "<p sourcefile=\"api/ZebraPuma.System.ServiceProcess.ServiceStateChangedEventArgs.yml\" sourcestartlinenumber=\"1\">Arguments d'événement pour le changement d'état d'un service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.System.ServiceProcess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.System.ServiceProcess.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ZebraPuma.System.ServiceProcess",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ZebraPuma.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ZebraPuma.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": null,
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/plugins.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/plugins.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/serviceprocess.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/serviceprocess.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Zebra Puma Framework | ZebraPuma Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Zebra Puma Framework | ZebraPuma Documentation ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/docs/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="ZebraPuma">
+            ZebraPuma
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="zebra-puma-framework">Zebra Puma Framework</h1>
+
+<p><strong>Services &amp; Plugins pour Windows et .NET</strong></p>
+<p><a href="https://dotnet.microsoft.com/download/dotnet-framework/net48"><img src="https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg" alt=".NET Framework 4.8"></a>
+<a href="https://dotnet.microsoft.com/download/dotnet/10.0"><img src="https://img.shields.io/badge/.NET-10.0-purple.svg" alt=".NET"></a>
+<a href="https://github.com/ZebraPumaOrg/ZebraPuma-Packages"><img src="https://img.shields.io/badge/ZebraPuma-Packages-blue" alt="Packages"></a>
+<a href="https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages"><img src="https://img.shields.io/badge/NuGet-Org%20Packages-blueviolet" alt="NuGet"></a></p>
+<hr>
+<h2 id="-vue-densemble">📚 Vue d'ensemble</h2>
+<p>ZebraPuma est un framework d'entreprise conçu pour faciliter le développement d'applications modulaires, de services Windows et d'outils d'analyse de données. Le framework offre une architecture extensible basée sur des plugins, permettant une grande flexibilité et une maintenance simplifiée.</p>
+<h3 id="auteur">Auteur</h3>
+<p><strong>Régis SCYEUR - Zebra Puma Services</strong></p>
+<h3 id="copyright">Copyright</h3>
+<p>© 2025-2026 Régis SCYEUR - Zebra Puma Services - Tous droits réservés</p>
+<h3 id="licence">Licence</h3>
+<p>Licence Propriétaire - Voir le fichier <a href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/LICENSE">LICENSE</a></p>
+<hr>
+<h2 id="-architecture-de-la-solution">🏗️ Architecture de la Solution</h2>
+<p>La solution ZebraPuma est organisée en plusieurs bibliothèques réutilisables et applications :</p>
+<h3 id="-composants-principaux">📦 Composants Principaux</h3>
+<table>
+<thead>
+<tr>
+<th>Composant</th>
+<th>Type</th>
+<th>Description</th>
+<th>Cibles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ZebraPuma.Plugins</strong></td>
+<td>Bibliothèque</td>
+<td>Système de plugins modulaire avec chargement dynamique</td>
+<td>.NET 4.8, .NET 10.0</td>
+</tr>
+<tr>
+<td><strong>ZebraPuma.System.ServiceProcess</strong></td>
+<td>Bibliothèque</td>
+<td>Gestion avancée des services Windows avec support plugins</td>
+<td>.NET 4.8, .NET 10.0-windows</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-documentation-détaillée">📖 Documentation Détaillée</h2>
+<h3 id="bibliothèques-core">Bibliothèques Core</h3>
+<ul>
+<li><p><strong><a href="articles/plugins.html">ZebraPuma.Plugins</a></strong> - Système de plugins avec chargement dynamique</p>
+<ul>
+<li>Architecture plugin/host</li>
+<li>Chargement automatique et manuel</li>
+<li>Gestion du cycle de vie</li>
+<li>Résolution des dépendances</li>
+</ul>
+</li>
+<li><p><strong><a href="articles/serviceprocess.html">ZebraPuma.System.ServiceProcess</a></strong> - Services Windows extensibles</p>
+<ul>
+<li>Services basés sur plugins</li>
+<li>Interface de contrôle WinForms</li>
+<li>Gestion centralisée multi-services</li>
+<li>Support .NET Framework et .NET moderne</li>
+</ul>
+</li>
+</ul>
+<h2 id="-démarrage-rapide">🚀 Démarrage Rapide</h2>
+<h3 id="prérequis">Prérequis</h3>
+<ul>
+<li><strong>Windows</strong> 10 ou supérieur</li>
+<li><strong>.NET Framework 4.8</strong> pour les applications .NET Framework</li>
+<li><strong>.NET 10.0 SDK</strong> pour les applications .NET modernes</li>
+<li><strong>Visual Studio 2022</strong> (recommandé) ou Visual Studio Code</li>
+</ul>
+<h3 id="installation">Installation</h3>
+<ol>
+<li><p><strong>Cloner le dépôt</strong> :</p>
+<pre><code class="lang-bash">git clone https://github.com/ZebraPumaOrg/ZebraPuma.git
+cd ZebraPuma
+</code></pre>
+</li>
+<li><p><strong>Ouvrir la solution</strong> :</p>
+<pre><code class="lang-bash">cd src\dotnet
+start ZebraPuma.sln
+</code></pre>
+</li>
+<li><p><strong>Restaurer les packages NuGet</strong> :</p>
+<pre><code class="lang-bash">dotnet restore
+</code></pre>
+</li>
+<li><p><strong>Compiler la solution</strong> :</p>
+<pre><code class="lang-bash">dotnet build
+</code></pre>
+</li>
+</ol>
+<h3 id="utilisation-de-base">Utilisation de Base</h3>
+<h4 id="créer-un-plugin-simple">Créer un Plugin Simple</h4>
+<pre><code class="lang-csharp">using ZebraPuma.Plugins;
+
+public class MonPlugin : PluginBase
+{
+    public override string Name =&gt; &quot;MonPlugin&quot;;
+    public override string Description =&gt; &quot;Un exemple de plugin&quot;;
+
+    public override void Initialize(IPluginContext context)
+    {
+        base.Initialize(context);
+        // Logique d'initialisation
+    }
+}
+</code></pre>
+<h4 id="charger-des-plugins">Charger des Plugins</h4>
+<pre><code class="lang-csharp">var plugins = PluginLoader.LoadPlugins&lt;IPlugin&gt;();
+foreach (var plugin in plugins)
+{
+    Console.WriteLine($&quot;Plugin chargé: {plugin.Name} v{plugin.Version}&quot;);
+}
+</code></pre>
+<h4 id="créer-un-service-windows">Créer un Service Windows</h4>
+<pre><code class="lang-csharp">using ZebraPuma.System.ServiceProcess;
+
+public class MonService : ServiceBaseExtended
+{
+    public override string Name =&gt; &quot;MonService&quot;;
+    
+    protected override void OnStartCore(string[] args)
+    {
+        // Logique de démarrage
+    }
+    
+    protected override void OnStopCore()
+    {
+        // Logique d'arrêt
+    }
+}
+</code></pre>
+<hr>
+<h2 id="-structure-du-projet">📁 Structure du Projet</h2>
+<pre><code>ZebraPuma/
+├── docs/                                    # Documentation complète
+│   ├── README.md                           # Ce fichier
+│   ├── plugins.md                          # Doc ZebraPuma.Plugins
+│   ├── serviceprocess.md                   # Doc ZebraPuma.System.ServiceProcess
+│   └── examples/                           # Exemples de code
+├── src/
+│   └── dotnet/
+│       ├── ZebraPuma.sln                   # Solution Visual Studio
+│       ├── Directory.Build.props            # Configuration partagée
+│       ├── ZebraPuma.Plugins/              # Bibliothèque de plugins
+│       ├── ZebraPuma.System.ServiceProcess/ # Bibliothèque de services
+│       └── (autres projets internes)
+├── LICENSE                                  # Licence propriétaire
+└── README.md                               # README principal
+</code></pre>
+<hr>
+<h2 id="-configuration">🔧 Configuration</h2>
+<h3 id="configuration-des-plugins-pluginsjson">Configuration des Plugins (plugins.json)</h3>
+<pre><code class="lang-json">{
+  &quot;AutoDiscover&quot;: true,
+  &quot;Plugins&quot;: [
+    {
+      &quot;Folder&quot;: &quot;MonPlugin&quot;,
+      &quot;Assembly&quot;: &quot;MonPlugin.dll&quot;,
+      &quot;Type&quot;: &quot;MonNamespace.MonPlugin&quot;
+    }
+  ]
+}
+</code></pre>
+<h3 id="configuration-nlog">Configuration NLog</h3>
+<p>Chaque bibliothèque inclut une configuration NLog pour le logging :</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;nlog xmlns=&quot;http://www.nlog-project.org/schemas/NLog.xsd&quot;
+      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+  &lt;targets&gt;
+    &lt;target name=&quot;file&quot; xsi:type=&quot;File&quot; 
+            fileName=&quot;${basedir}/logs/${shortdate}.log&quot; /&gt;
+  &lt;/targets&gt;
+  &lt;rules&gt;
+    &lt;logger name=&quot;*&quot; minlevel=&quot;Info&quot; writeTo=&quot;file&quot; /&gt;
+  &lt;/rules&gt;
+&lt;/nlog&gt;
+</code></pre>
+<hr>
+<h2 id="-dépendances">🔌 Dépendances</h2>
+<h3 id="packages-nuget-communs">Packages NuGet Communs</h3>
+<ul>
+<li><strong>Newtonsoft.Json</strong> 13.0.4 - Sérialisation JSON</li>
+<li><strong>NLog</strong> 6.0.7 - Logging structuré</li>
+</ul>
+<h3 id="packages-spécifiques">Packages Spécifiques</h3>
+<h4 id="zebrapumasystemserviceprocess">ZebraPuma.System.ServiceProcess</h4>
+<ul>
+<li><strong>System.ServiceProcess.ServiceController</strong> 9.0.0 (.NET 10.0 uniquement)</li>
+</ul>
+<hr>
+<h2 id="-fonctionnalités-principales">📊 Fonctionnalités Principales</h2>
+<h3 id="zebrapumaplugins">ZebraPuma.Plugins</h3>
+<ul>
+<li>✅ Chargement dynamique de plugins depuis DLL</li>
+<li>✅ Auto-découverte des plugins dans les dossiers</li>
+<li>✅ Configuration JSON flexible</li>
+<li>✅ Résolution automatique des dépendances d'assemblies</li>
+<li>✅ Gestion du cycle de vie (Initialize, Dispose)</li>
+<li>✅ Support multi-frameworks (.NET 4.8 et .NET 10.0)</li>
+</ul>
+<h3 id="zebrapumasystemserviceprocess-1">ZebraPuma.System.ServiceProcess</h3>
+<ul>
+<li>✅ Services Windows étendus avec interface IServiceExtended</li>
+<li>✅ Classe de base ServiceBaseExtended thread-safe</li>
+<li>✅ ServiceManager pour gérer plusieurs services</li>
+<li>✅ Interface WinForms de contrôle (ServiceControllerForm)</li>
+<li>✅ Intégration avec le système de plugins</li>
+<li>✅ Support multi-frameworks avec Windows Forms</li>
+</ul>
+<hr>
+<h2 id="-compilation-et-déploiement">🛠️ Compilation et Déploiement</h2>
+<h3 id="compilation-en-ligne-de-commande">Compilation en Ligne de Commande</h3>
+<pre><code class="lang-powershell"># Compiler toute la solution
+dotnet build src\dotnet\ZebraPuma.sln --configuration Release
+
+# Compiler un projet spécifique
+dotnet build src\dotnet\ZebraPuma.Plugins\ZebraPuma.Plugins.csproj
+
+# Créer les packages NuGet
+dotnet pack src\dotnet\ZebraPuma.Plugins\ZebraPuma.Plugins.csproj --configuration Release
+</code></pre>
+<h3 id="publication">Publication</h3>
+<pre><code class="lang-powershell"># Publier pour .NET Framework 4.8
+dotnet publish src\dotnet\ZebraPuma.System.ServiceProcess\ZebraPuma.System.ServiceProcess.csproj `
+    --configuration Release `
+    --framework net48 `
+    --output publish\net48
+</code></pre>
+<hr>
+<h2 id="-bonnes-pratiques">📝 Bonnes Pratiques</h2>
+<h3 id="développement-de-plugins">Développement de Plugins</h3>
+<ol>
+<li><strong>Héritage de PluginBase</strong> : Utiliser <code>PluginBase</code> pour bénéficier du pattern Dispose</li>
+<li><strong>Nom unique</strong> : Chaque plugin doit avoir un nom unique</li>
+<li><strong>Versioning</strong> : Suivre le versioning sémantique (SemVer)</li>
+<li><strong>Logging</strong> : Utiliser NLog pour tracer les opérations</li>
+<li><strong>Configuration</strong> : Utiliser <code>PluginConfigLoader</code> pour charger la configuration</li>
+</ol>
+<h3 id="développement-de-services">Développement de Services</h3>
+<ol>
+<li><strong>Thread Safety</strong> : Les services doivent être thread-safe</li>
+<li><strong>Gestion d'erreurs</strong> : Capturer et logger toutes les exceptions</li>
+<li><strong>Timeout</strong> : Implémenter des timeouts pour les opérations longues</li>
+<li><strong>État</strong> : Maintenir un état cohérent (IsRunning)</li>
+<li><strong>Cleanup</strong> : Libérer toutes les ressources dans OnStopCore</li>
+</ol>
+<hr>
+<h2 id="-debugging-et-troubleshooting">🔍 Debugging et Troubleshooting</h2>
+<h3 id="logs">Logs</h3>
+<p>Les logs sont générés dans le dossier <code>logs/</code> de chaque application :</p>
+<pre><code>{Application}/logs/{date}.log
+</code></pre>
+<h3 id="problèmes-courants">Problèmes Courants</h3>
+<p><strong>Le plugin ne se charge pas</strong></p>
+<ul>
+<li>Vérifier que le fichier <code>plugins.json</code> existe</li>
+<li>Vérifier que le chemin Assembly est correct</li>
+<li>Consulter les logs NLog</li>
+</ul>
+<p><strong>Service ne démarre pas</strong></p>
+<ul>
+<li>Vérifier les permissions Windows</li>
+<li>Vérifier que OnStartCore ne lève pas d'exception</li>
+<li>Consulter l'Event Viewer Windows</li>
+</ul>
+<p><strong>Erreur de résolution d'assembly</strong></p>
+<ul>
+<li>Vérifier que toutes les DLL dépendantes sont présentes</li>
+<li>Utiliser Fusion Log Viewer pour diagnostiquer</li>
+</ul>
+<hr>
+<h2 id="-tests">🧪 Tests</h2>
+<h3 id="tests-unitaires">Tests Unitaires</h3>
+<pre><code class="lang-powershell"># Exécuter tous les tests
+dotnet test src\dotnet\ZebraPuma.sln
+
+# Tests avec couverture
+dotnet test --collect:&quot;XPlat Code Coverage&quot;
+</code></pre>
+<hr>
+<h2 id="-roadmap">📈 Roadmap</h2>
+<h3 id="version-21-q1-2026">Version 2.1 (Q1 2026)</h3>
+<ul>
+<li>[ ] Support .NET 11.0</li>
+<li>[ ] Amélioration du hot-reload des plugins</li>
+<li>[ ] Interface de configuration web</li>
+</ul>
+<h3 id="version-22-q2-2026">Version 2.2 (Q2 2026)</h3>
+<ul>
+<li>[ ] Support Linux pour les bibliothèques core</li>
+<li>[ ] Plugin manager GUI</li>
+<li>[ ] Métriques et monitoring intégrés</li>
+</ul>
+<hr>
+<h2 id="-contribution">🤝 Contribution</h2>
+<p>Ce projet est sous licence propriétaire. Les contributions externes ne sont pas acceptées sans accord commercial préalable.</p>
+<p>Pour toute question commerciale :</p>
+<ul>
+<li><strong>Email</strong> : contact@zebrapuma.services</li>
+<li><strong>GitHub</strong> : <a href="https://github.com/ZebraPumaOrg">https://github.com/ZebraPumaOrg</a></li>
+</ul>
+<hr>
+<h2 id="-historique-des-versions">📜 Historique des Versions</h2>
+<h3 id="v20x-décembre-2025">v2.0.x (Décembre 2025)</h3>
+<ul>
+<li>Migration depuis EuroJapan vers ZebraPuma</li>
+<li>Support multi-frameworks (.NET 4.8 et .NET 10.0)</li>
+<li>Refactoring complet de l'architecture</li>
+<li>Documentation complète</li>
+</ul>
+<h3 id="v10x-2024">v1.0.x (2024)</h3>
+<ul>
+<li>Version initiale dans le projet EuroJapan</li>
+<li>Support .NET Framework uniquement</li>
+</ul>
+<hr>
+<h2 id="-liens-utiles">🔗 Liens Utiles</h2>
+<ul>
+<li><a href="https://zebrapuma.services">Site Web ZebraPuma</a></li>
+<li><a href="https://github.com/ZebraPumaOrg">GitHub Organization</a></li>
+<li><a href="https://github.com/ZebraPumaOrg/ZebraPuma-Packages">Packages ZebraPuma</a></li>
+<li><a href="https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages">Packages NuGet publics</a></li>
+<li><a href="api/">Documentation API</a></li>
+<li><a href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/LICENSE">Licence</a></li>
+</ul>
+<hr>
+<p><strong>Made with ❤️ by Régis SCYEUR, Zebra Puma Services</strong></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/docs/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © 2025-2026 Régis SCYEUR - Zebra Puma Services. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

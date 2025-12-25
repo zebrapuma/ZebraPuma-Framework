@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ZebraPuma.System.ServiceProcess | ZebraPuma Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ZebraPuma.System.ServiceProcess | ZebraPuma Documentation ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/docs/articles/serviceprocess.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="ZebraPuma">
+            ZebraPuma
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="zebrapumasystemserviceprocess">ZebraPuma.System.ServiceProcess</h1>
+
+<p><strong>Gestion Avancée des Services Windows avec Support Plugins</strong></p>
+<hr>
+<h2 id="-table-des-matières">📋 Table des Matières</h2>
+<ul>
+<li><a href="#vue-densemble">Vue d'ensemble</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#interfaces-et-classes">Interfaces et Classes</a></li>
+<li><a href="#servicemanager">ServiceManager</a></li>
+<li><a href="#servicecontrollerform">ServiceControllerForm</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#utilisation">Utilisation</a></li>
+<li><a href="#exemples">Exemples</a></li>
+<li><a href="#api-r%C3%A9f%C3%A9rence">API Référence</a></li>
+<li><a href="#d%C3%A9ploiement-windows">Déploiement Windows</a></li>
+<li><a href="#bonnes-pratiques">Bonnes Pratiques</a></li>
+</ul>
+<hr>
+<h2 id="vue-densemble">Vue d'ensemble</h2>
+<p><strong>ZebraPuma.System.ServiceProcess</strong> est une bibliothèque avancée pour créer et gérer des services Windows extensibles en .NET. Elle combine le framework de services Windows natif avec le système de plugins ZebraPuma pour créer des services modulaires et maintenables.</p>
+<h3 id="caractéristiques-principales">Caractéristiques Principales</h3>
+<ul>
+<li>✅ <strong>Services Windows étendus</strong> avec interface <code>IServiceExtended</code></li>
+<li>✅ <strong>Classe de base</strong> <code>ServiceBaseExtended</code> thread-safe</li>
+<li>✅ <strong>ServiceManager</strong> pour gérer plusieurs services simultanément</li>
+<li>✅ <strong>Interface WinForms</strong> de contrôle (<code>ServiceControllerForm</code>)</li>
+<li>✅ <strong>Intégration complète</strong> avec ZebraPuma.Plugins</li>
+<li>✅ <strong>Support multi-frameworks</strong> avec adaptation automatique</li>
+<li>✅ <strong>Mode console</strong> pour développement et debugging</li>
+<li>✅ <strong>Mode service</strong> pour production Windows</li>
+<li>✅ <strong>Rechargement dynamique</strong> des services</li>
+</ul>
+<h3 id="cibles-supportées">Cibles Supportées</h3>
+<ul>
+<li><strong>.NET Framework 4.8</strong> (Windows)</li>
+<li><strong>.NET 10.0-windows</strong></li>
+</ul>
+<h3 id="dépendances">Dépendances</h3>
+<ul>
+<li><strong>ZebraPuma.Plugins</strong> (projet référencé)</li>
+<li><strong>Newtonsoft.Json</strong> 13.0.4</li>
+<li><strong>NLog</strong> 6.0.7</li>
+<li><strong>System.ServiceProcess</strong> (pour .NET Framework 4.8)</li>
+<li><strong>System.ServiceProcess.ServiceController</strong> 9.0.0 (pour .NET 10.0)</li>
+</ul>
+<hr>
+<h2 id="architecture">Architecture</h2>
+<h3 id="diagramme-de-classes">Diagramme de Classes</h3>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│                  Windows Service Host                    │
+│                                                           │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │           ServiceManager                           │  │
+│  │  • Services: List&lt;IServiceExtended&gt;               │  │
+│  │  • StartService(name)                             │  │
+│  │  • StopService(name)                              │  │
+│  │  • StartAll() / StopAll()                         │  │
+│  │  • ReloadFromPlugins()                            │  │
+│  │  • Events: ServiceStateChanged, ServicesReloaded  │  │
+│  └────────────────────────────────────────────────────┘  │
+│                          │                               │
+│          ┌───────────────┴────────────┐                  │
+│          ▼                            ▼                  │
+│  ┌──────────────┐            ┌──────────────┐            │
+│  │ IServiceExt. │            │ServiceFactory│            │
+│  │  + IPlugin   │            │ LoadServices │            │
+│  └──────────────┘            └──────────────┘            │
+│          │                                               │
+└──────────┼───────────────────────────────────────────────┘
+           │
+           ▼
+┌────────────────────────────────────────┐
+│     ServiceBaseExtended                │
+│     : ServiceBase, IServiceExtended    │
+│                                        │
+│  • OnStart(args) → OnStartCore(args)  │
+│  • OnStop() → OnStopCore()            │
+│  • StartService() / StopService()     │
+│  • IsRunning (thread-safe)            │
+│  • Lock-based synchronization         │
+└────────────────────────────────────────┘
+           │
+           ▼
+┌────────────────────────────────────────┐
+│      Votre Service Concret             │
+│                                        │
+│  protected override OnStartCore()     │
+│  protected override OnStopCore()      │
+└────────────────────────────────────────┘
+</code></pre>
+<h3 id="flux-dexécution">Flux d'Exécution</h3>
+<h4 id="mode-service-windows">Mode Service Windows</h4>
+<pre><code>1. Windows SCM lance le service
+        ↓
+2. OnStart() appelé automatiquement
+        ↓
+3. ServiceBaseExtended.OnStart() → StartInternal()
+        ↓
+4. Lock acquisition
+        ↓
+5. OnStartCore() de votre service
+        ↓
+6. IsRunning = true
+        ↓
+7. Service en cours d'exécution
+        ↓
+8. Windows SCM demande l'arrêt
+        ↓
+9. OnStop() → StopInternal()
+        ↓
+10. OnStopCore() de votre service
+        ↓
+11. IsRunning = false
+</code></pre>
+<h4 id="mode-console-debug">Mode Console (Debug)</h4>
+<pre><code>1. Application console démarre
+        ↓
+2. ServiceManager.CreateFromPlugins()
+        ↓
+3. Chargement des services via PluginLoader
+        ↓
+4. ServiceControllerForm.Show() (optionnel)
+        ↓
+5. manager.StartAll() ou StartService(name)
+        ↓
+6. Services s'exécutent
+        ↓
+7. manager.StopAll() avant exit
+</code></pre>
+<hr>
+<h2 id="interfaces-et-classes">Interfaces et Classes</h2>
+<h3 id="iserviceextended">IServiceExtended</h3>
+<p>Interface étendant <code>IPlugin</code> avec les capacités de service Windows.</p>
+<pre><code class="lang-csharp">public interface IServiceExtended : IPlugin
+{
+    /// &lt;summary&gt;
+    /// Démarre le service Windows.
+    /// &lt;/summary&gt;
+    void StartService();
+    
+    /// &lt;summary&gt;
+    /// Arrête le service Windows.
+    /// &lt;/summary&gt;
+    void StopService();
+    
+    /// &lt;summary&gt;
+    /// Indique si le service est actuellement en cours d'exécution.
+    /// &lt;/summary&gt;
+    bool IsRunning { get; }
+}
+</code></pre>
+<h3 id="servicebaseextended">ServiceBaseExtended</h3>
+<p>Classe de base abstraite pour créer des services Windows.</p>
+<pre><code class="lang-csharp">public abstract class ServiceBaseExtended : ServiceBase, IServiceExtended
+{
+    // Propriétés héritées de IPlugin
+    public abstract string Name { get; }
+    public virtual string Version { get; }
+    public virtual string Description { get; }
+    
+    // Propriété de IServiceExtended
+    public bool IsRunning { get; }
+    
+    // Méthodes publiques
+    public void StartService();
+    public void StopService();
+    public virtual void Initialize(IPluginContext context);
+    
+    // Méthodes abstraites à implémenter
+    protected abstract void OnStartCore(string[] args);
+    protected abstract void OnStopCore();
+    
+    // Pattern Dispose
+    protected virtual void DisposeManagedResources();
+    protected virtual void DisposeUnmanagedResources();
+}
+</code></pre>
+<p><strong>Caractéristiques :</strong></p>
+<ul>
+<li><strong>Thread-safe</strong> : Utilise un lock pour synchroniser Start/Stop</li>
+<li><strong>Gestion d'état</strong> : <code>IsRunning</code> volatile pour lecture thread-safe</li>
+<li><strong>Sealed overrides</strong> : <code>OnStart()</code> et <code>OnStop()</code> sont sealed, vous devez override <code>OnStartCore()</code> et <code>OnStopCore()</code></li>
+<li><strong>Exception safety</strong> : Si <code>OnStartCore()</code> lève une exception, <code>IsRunning</code> reste <code>false</code></li>
+</ul>
+<h3 id="servicemanager">ServiceManager</h3>
+<p>Gestionnaire centralisé pour administrer plusieurs services.</p>
+<pre><code class="lang-csharp">public class ServiceManager : IDisposable
+{
+    // Constructeurs
+    public ServiceManager(IServiceExtended service);
+    public ServiceManager(List&lt;IServiceExtended&gt; services);
+    
+    // Factory methods
+    public static ServiceManager CreateFromPlugins(PluginLoadingOptions options = null);
+    
+    // Propriétés
+    public IList&lt;IServiceExtended&gt; Services { get; }
+    
+    // Méthodes de contrôle
+    public void StartService(string name);
+    public void StopService(string name);
+    public void RestartService(string name);
+    public void StartAll();
+    public void StopAll();
+    public void ReloadFromPlugins(PluginLoadingOptions options = null);
+    
+    // Événements
+    public event EventHandler&lt;ServiceStateChangedEventArgs&gt; ServiceStateChanged;
+    public event EventHandler ServicesReloaded;
+}
+</code></pre>
+<h3 id="servicefactory">ServiceFactory</h3>
+<p>Factory pour créer des services depuis une configuration JSON.</p>
+<pre><code class="lang-csharp">public class ServiceFactory
+{
+    public List&lt;IServiceExtended&gt; LoadServices(string configPath);
+}
+</code></pre>
+<h3 id="servicedefinition">ServiceDefinition</h3>
+<p>Classe de configuration pour définir un service.</p>
+<pre><code class="lang-csharp">public class ServiceDefinition
+{
+    public string Name { get; set; }
+    public string Type { get; set; }
+    public string Description { get; set; }
+}
+</code></pre>
+<hr>
+<h2 id="servicemanager-1">ServiceManager</h2>
+<p>Le <code>ServiceManager</code> est le composant central pour gérer plusieurs services.</p>
+<h3 id="création">Création</h3>
+<p><strong>Depuis des plugins :</strong></p>
+<pre><code class="lang-csharp">var manager = ServiceManager.CreateFromPlugins(new PluginLoadingOptions
+{
+    PluginsDirectoryName = &quot;Services&quot;,
+    ConfigFileName = &quot;services.json&quot;
+});
+</code></pre>
+<p><strong>Avec une liste de services :</strong></p>
+<pre><code class="lang-csharp">var services = new List&lt;IServiceExtended&gt;
+{
+    new MonService1(),
+    new MonService2()
+};
+var manager = new ServiceManager(services);
+</code></pre>
+<h3 id="contrôle-des-services">Contrôle des Services</h3>
+<pre><code class="lang-csharp">// Démarrer un service spécifique
+manager.StartService(&quot;MonService1&quot;);
+
+// Arrêter un service
+manager.StopService(&quot;MonService1&quot;);
+
+// Redémarrer
+manager.RestartService(&quot;MonService1&quot;);
+
+// Démarrer tous les services
+manager.StartAll();
+
+// Arrêter tous les services
+manager.StopAll();
+</code></pre>
+<h3 id="rechargement-dynamique">Rechargement Dynamique</h3>
+<pre><code class="lang-csharp">// Recharger les services depuis les plugins
+manager.ReloadFromPlugins();
+
+// Événement déclenché après rechargement
+manager.ServicesReloaded += (sender, args) =&gt;
+{
+    Console.WriteLine(&quot;Services rechargés&quot;);
+};
+</code></pre>
+<h3 id="événements">Événements</h3>
+<pre><code class="lang-csharp">manager.ServiceStateChanged += (sender, args) =&gt;
+{
+    Console.WriteLine($&quot;Service {args.ServiceName}: {(args.IsRunning ? &quot;Démarré&quot; : &quot;Arrêté&quot;)}&quot;);
+};
+</code></pre>
+<hr>
+<h2 id="servicecontrollerform">ServiceControllerForm</h2>
+<p>Interface graphique WinForms pour contrôler les services.</p>
+<h3 id="utilisation">Utilisation</h3>
+<pre><code class="lang-csharp">var manager = ServiceManager.CreateFromPlugins();
+var form = new ServiceControllerForm(manager);
+form.ShowDialog();
+</code></pre>
+<h3 id="fonctionnalités">Fonctionnalités</h3>
+<ul>
+<li>✅ Liste tous les services avec leur état</li>
+<li>✅ Boutons Start/Stop/Restart par service</li>
+<li>✅ Bouton Start All / Stop All</li>
+<li>✅ Bouton Reload pour recharger les plugins</li>
+<li>✅ Refresh automatique de l'interface</li>
+<li>✅ Gestion d'erreurs avec MessageBox</li>
+</ul>
+<hr>
+<h2 id="configuration">Configuration</h2>
+<h3 id="servicesjson">services.json</h3>
+<p>Structure pour ServiceFactory :</p>
+<pre><code class="lang-json">[
+  {
+    &quot;Name&quot;: &quot;MonService1&quot;,
+    &quot;Type&quot;: &quot;MonApp.Services.MonService1, MonApp.Services&quot;,
+    &quot;Description&quot;: &quot;Premier service&quot;
+  },
+  {
+    &quot;Name&quot;: &quot;MonService2&quot;,
+    &quot;Type&quot;: &quot;MonApp.Services.MonService2, MonApp.Services&quot;,
+    &quot;Description&quot;: &quot;Deuxième service&quot;
+  }
+]
+</code></pre>
+<h3 id="pluginsjson">plugins.json</h3>
+<p>Pour utiliser avec PluginLoader :</p>
+<pre><code class="lang-json">{
+  &quot;AutoDiscover&quot;: true,
+  &quot;Plugins&quot;: [
+    {
+      &quot;Folder&quot;: &quot;MonService&quot;,
+      &quot;Assembly&quot;: &quot;MonService.dll&quot;,
+      &quot;Type&quot;: &quot;MonApp.Services.MonService&quot;
+    }
+  ]
+}
+</code></pre>
+<h3 id="nlogconfig">NLog.config</h3>
+<p>Logging structuré pour les services :</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;nlog xmlns=&quot;http://www.nlog-project.org/schemas/NLog.xsd&quot;
+      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+  &lt;targets&gt;
+    &lt;target name=&quot;file&quot; xsi:type=&quot;File&quot;
+            fileName=&quot;${basedir}/logs/${shortdate}.log&quot;
+            layout=&quot;${longdate} ${uppercase:${level}} ${logger} ${message} ${exception:format=tostring}&quot; /&gt;
+    &lt;target name=&quot;eventlog&quot; xsi:type=&quot;EventLog&quot;
+            source=&quot;MonService&quot;
+            log=&quot;Application&quot;
+            layout=&quot;${message} ${exception:format=tostring}&quot; /&gt;
+  &lt;/targets&gt;
+  &lt;rules&gt;
+    &lt;logger name=&quot;*&quot; minlevel=&quot;Info&quot; writeTo=&quot;file&quot; /&gt;
+    &lt;logger name=&quot;*&quot; minlevel=&quot;Error&quot; writeTo=&quot;eventlog&quot; /&gt;
+  &lt;/rules&gt;
+&lt;/nlog&gt;
+</code></pre>
+<hr>
+<h2 id="utilisation-1">Utilisation</h2>
+<h3 id="scénario-1--service-simple">Scénario 1 : Service Simple</h3>
+<h4 id="étape-1--créer-le-service">Étape 1 : Créer le Service</h4>
+<pre><code class="lang-csharp">using System;
+using System.Threading;
+using NLog;
+using ZebraPuma.Plugins;
+using ZebraPuma.System.ServiceProcess;
+
+namespace MonApp.Services
+{
+    public class HeartbeatService : ServiceBaseExtended
+    {
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        private Timer _timer;
+
+        public override string Name =&gt; &quot;HeartbeatService&quot;;
+        public override string Description =&gt; &quot;Service envoyant un heartbeat toutes les 10 secondes&quot;;
+
+        protected override void OnStartCore(string[] args)
+        {
+            Logger.Info(&quot;Démarrage de {Service}&quot;, Name);
+            
+            _timer = new Timer(OnTick, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+        }
+
+        protected override void OnStopCore()
+        {
+            Logger.Info(&quot;Arrêt de {Service}&quot;, Name);
+            
+            _timer?.Change(Timeout.Infinite, Timeout.Infinite);
+            _timer?.Dispose();
+            _timer = null;
+        }
+
+        private void OnTick(object state)
+        {
+            Logger.Debug(&quot;Heartbeat à {Time}&quot;, DateTime.Now);
+        }
+
+        protected override void DisposeManagedResources()
+        {
+            _timer?.Dispose();
+        }
+    }
+}
+</code></pre>
+<h4 id="étape-2--mode-console-debug">Étape 2 : Mode Console (Debug)</h4>
+<pre><code class="lang-csharp">using System;
+using ZebraPuma.System.ServiceProcess;
+
+namespace MonApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            if (Environment.UserInteractive)
+            {
+                // Mode console pour développement
+                var service = new HeartbeatService();
+                service.StartService();
+
+                Console.WriteLine(&quot;Service démarré. Appuyez sur Enter pour arrêter...&quot;);
+                Console.ReadLine();
+
+                service.StopService();
+                service.Dispose();
+            }
+            else
+            {
+                // Mode service Windows
+                var servicesToRun = new ServiceBase[]
+                {
+                    new HeartbeatService()
+                };
+                ServiceBase.Run(servicesToRun);
+            }
+        }
+    }
+}
+</code></pre>
+<h4 id="étape-3--installation-windows">Étape 3 : Installation Windows</h4>
+<pre><code class="lang-powershell"># En tant qu'administrateur
+
+# Créer le service
+sc create HeartbeatService binPath=&quot;C:\MonApp\MonApp.exe&quot; DisplayName=&quot;Heartbeat Service&quot;
+
+# Configurer le démarrage automatique
+sc config HeartbeatService start=auto
+
+# Démarrer le service
+sc start HeartbeatService
+
+# Vérifier l'état
+sc query HeartbeatService
+</code></pre>
+<h3 id="scénario-2--multi-services-avec-servicemanager">Scénario 2 : Multi-Services avec ServiceManager</h3>
+<h4 id="programme-principal">Programme Principal</h4>
+<pre><code class="lang-csharp">using System;
+using System.ServiceProcess;
+using ZebraPuma.Plugins;
+using ZebraPuma.System.ServiceProcess;
+
+namespace MonApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            if (Environment.UserInteractive)
+            {
+                RunInConsoleMode();
+            }
+            else
+            {
+                RunAsWindowsService();
+            }
+        }
+
+        static void RunInConsoleMode()
+        {
+            var manager = ServiceManager.CreateFromPlugins(new PluginLoadingOptions
+            {
+                PluginsDirectoryName = &quot;Services&quot;,
+                ConfigFileName = &quot;plugins.json&quot;
+            });
+
+            // Afficher l'interface de contrôle
+            var form = new ServiceControllerForm(manager);
+            form.ShowDialog();
+
+            // Cleanup
+            manager.StopAll();
+            manager.Dispose();
+        }
+
+        static void RunAsWindowsService()
+        {
+            // Charger les services
+            var services = PluginLoader.LoadPlugins&lt;IServiceExtended&gt;(new PluginLoadingOptions
+            {
+                PluginsDirectoryName = &quot;Services&quot;
+            });
+
+            // Convertir en ServiceBase[]
+            var serviceBases = services
+                .OfType&lt;ServiceBase&gt;()
+                .ToArray();
+
+            if (serviceBases.Any())
+            {
+                ServiceBase.Run(serviceBases);
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="scénario-3--service-avec-configuration">Scénario 3 : Service avec Configuration</h3>
+<h4 id="configuration-heartbeatservicejson">Configuration (heartbeatservice.json)</h4>
+<pre><code class="lang-json">{
+  &quot;IntervalSeconds&quot;: 30,
+  &quot;LogToFile&quot;: true,
+  &quot;LogToEventLog&quot;: false,
+  &quot;Endpoints&quot;: [
+    &quot;https://api1.example.com/ping&quot;,
+    &quot;https://api2.example.com/ping&quot;
+  ]
+}
+</code></pre>
+<h4 id="classe-de-configuration">Classe de Configuration</h4>
+<pre><code class="lang-csharp">public class HeartbeatServiceConfig
+{
+    public int IntervalSeconds { get; set; } = 10;
+    public bool LogToFile { get; set; } = true;
+    public bool LogToEventLog { get; set; } = false;
+    public List&lt;string&gt; Endpoints { get; set; } = new List&lt;string&gt;();
+}
+</code></pre>
+<h4 id="service-avec-configuration">Service avec Configuration</h4>
+<pre><code class="lang-csharp">using ZebraPuma.Plugins;
+using ZebraPuma.System.ServiceProcess;
+
+public class HeartbeatService : ServiceBaseExtended
+{
+    private HeartbeatServiceConfig _config;
+    private Timer _timer;
+
+    public override string Name =&gt; &quot;HeartbeatService&quot;;
+
+    public override void Initialize(IPluginContext context)
+    {
+        base.Initialize(context);
+        
+        // Charger la configuration
+        _config = PluginConfigLoader.LoadAssemblyConfig&lt;HeartbeatServiceConfig&gt;();
+        Logger.Info(&quot;Configuration chargée: Intervalle={Seconds}s, Endpoints={Count}&quot;,
+            _config.IntervalSeconds, _config.Endpoints.Count);
+    }
+
+    protected override void OnStartCore(string[] args)
+    {
+        var interval = TimeSpan.FromSeconds(_config.IntervalSeconds);
+        _timer = new Timer(OnTick, null, TimeSpan.Zero, interval);
+    }
+
+    private void OnTick(object state)
+    {
+        foreach (var endpoint in _config.Endpoints)
+        {
+            try
+            {
+                // Ping l'endpoint
+                using (var client = new HttpClient())
+                {
+                    var response = client.GetAsync(endpoint).Result;
+                    Logger.Debug(&quot;Ping {Endpoint}: {Status}&quot;, endpoint, response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, &quot;Erreur ping {Endpoint}&quot;, endpoint);
+            }
+        }
+    }
+
+    protected override void OnStopCore()
+    {
+        _timer?.Dispose();
+    }
+}
+</code></pre>
+<hr>
+<h2 id="exemples">Exemples</h2>
+<h3 id="exemple-1--service-de-traitement-de-queue">Exemple 1 : Service de Traitement de Queue</h3>
+<pre><code class="lang-csharp">using System.Collections.Concurrent;
+using System.Threading;
+using System.Threading.Tasks;
+using ZebraPuma.System.ServiceProcess;
+
+public class QueueProcessorService : ServiceBaseExtended
+{
+    private readonly ConcurrentQueue&lt;string&gt; _queue = new ConcurrentQueue&lt;string&gt;();
+    private CancellationTokenSource _cts;
+    private Task _processingTask;
+
+    public override string Name =&gt; &quot;QueueProcessor&quot;;
+
+    protected override void OnStartCore(string[] args)
+    {
+        _cts = new CancellationTokenSource();
+        _processingTask = Task.Run(() =&gt; ProcessQueue(_cts.Token));
+        Logger.Info(&quot;Queue processor démarré&quot;);
+    }
+
+    protected override void OnStopCore()
+    {
+        _cts?.Cancel();
+        _processingTask?.Wait(TimeSpan.FromSeconds(30));
+        Logger.Info(&quot;Queue processor arrêté&quot;);
+    }
+
+    private async Task ProcessQueue(CancellationToken ct)
+    {
+        while (!ct.IsCancellationRequested)
+        {
+            if (_queue.TryDequeue(out string item))
+            {
+                await ProcessItem(item);
+            }
+            else
+            {
+                await Task.Delay(100, ct);
+            }
+        }
+    }
+
+    private async Task ProcessItem(string item)
+    {
+        Logger.Debug(&quot;Traitement de {Item}&quot;, item);
+        await Task.Delay(1000); // Simule le traitement
+    }
+
+    public void Enqueue(string item)
+    {
+        _queue.Enqueue(item);
+    }
+
+    protected override void DisposeManagedResources()
+    {
+        _cts?.Dispose();
+        _processingTask?.Dispose();
+    }
+}
+</code></pre>
+<h3 id="exemple-2--service-de-monitoring-avec-alertes">Exemple 2 : Service de Monitoring avec Alertes</h3>
+<pre><code class="lang-csharp">using System;
+using System.Diagnostics;
+using System.Threading;
+using ZebraPuma.System.ServiceProcess;
+
+public class SystemMonitorService : ServiceBaseExtended
+{
+    private Timer _timer;
+    private PerformanceCounter _cpuCounter;
+    private PerformanceCounter _ramCounter;
+
+    public override string Name =&gt; &quot;SystemMonitor&quot;;
+    public override string Description =&gt; &quot;Surveillance du CPU et de la RAM&quot;;
+
+    protected override void OnStartCore(string[] args)
+    {
+        _cpuCounter = new PerformanceCounter(&quot;Processor&quot;, &quot;% Processor Time&quot;, &quot;_Total&quot;);
+        _ramCounter = new PerformanceCounter(&quot;Memory&quot;, &quot;Available MBytes&quot;);
+
+        _timer = new Timer(CheckSystem, null, TimeSpan.Zero, TimeSpan.FromMinutes(1));
+        Logger.Info(&quot;Monitoring système démarré&quot;);
+    }
+
+    private void CheckSystem(object state)
+    {
+        var cpu = _cpuCounter.NextValue();
+        var ram = _ramCounter.NextValue();
+
+        Logger.Info(&quot;CPU: {Cpu:F2}%, RAM disponible: {Ram:F0} MB&quot;, cpu, ram);
+
+        // Alertes
+        if (cpu &gt; 90)
+        {
+            Logger.Warn(&quot;⚠️ CPU élevé: {Cpu:F2}%&quot;, cpu);
+            SendAlert($&quot;CPU critique: {cpu:F2}%&quot;);
+        }
+
+        if (ram &lt; 500)
+        {
+            Logger.Warn(&quot;⚠️ RAM faible: {Ram:F0} MB&quot;, ram);
+            SendAlert($&quot;RAM critique: {ram:F0} MB&quot;);
+        }
+    }
+
+    private void SendAlert(string message)
+    {
+        // Envoyer email, SMS, etc.
+        Logger.Error(&quot;ALERTE: {Message}&quot;, message);
+    }
+
+    protected override void OnStopCore()
+    {
+        _timer?.Dispose();
+        _cpuCounter?.Dispose();
+        _ramCounter?.Dispose();
+        Logger.Info(&quot;Monitoring système arrêté&quot;);
+    }
+}
+</code></pre>
+<hr>
+<h2 id="api-référence">API Référence</h2>
+<h3 id="namespace-zebrapumasystemserviceprocess">Namespace: ZebraPuma.System.ServiceProcess</h3>
+<h4 id="classes">Classes</h4>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ServiceBaseExtended</code></td>
+<td>Classe de base pour services Windows</td>
+</tr>
+<tr>
+<td><code>ServiceManager</code></td>
+<td>Gestionnaire multi-services</td>
+</tr>
+<tr>
+<td><code>ServiceFactory</code></td>
+<td>Factory pour créer des services</td>
+</tr>
+<tr>
+<td><code>ServiceControllerForm</code></td>
+<td>Interface WinForms de contrôle</td>
+</tr>
+<tr>
+<td><code>ServiceDefinition</code></td>
+<td>Définition de configuration de service</td>
+</tr>
+</tbody>
+</table>
+<h4 id="interfaces">Interfaces</h4>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IServiceExtended</code></td>
+<td>Contrat pour services Windows étendus</td>
+</tr>
+</tbody>
+</table>
+<h4 id="events">Events</h4>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Args</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ServiceStateChanged</code></td>
+<td><code>ServiceStateChangedEventArgs</code></td>
+<td>Service démarré/arrêté</td>
+</tr>
+<tr>
+<td><code>ServicesReloaded</code></td>
+<td><code>EventArgs</code></td>
+<td>Services rechargés</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="déploiement-windows">Déploiement Windows</h2>
+<h3 id="installation-dun-service">Installation d'un Service</h3>
+<pre><code class="lang-powershell"># Méthode 1 : sc.exe (recommandé)
+sc create &quot;MonService&quot; `
+    binPath=&quot;C:\MonApp\MonService.exe&quot; `
+    DisplayName=&quot;Mon Service ZebraPuma&quot; `
+    start=auto `
+    obj=&quot;LocalSystem&quot;
+
+# Méthode 2 : PowerShell
+New-Service -Name &quot;MonService&quot; `
+    -BinaryPathName &quot;C:\MonApp\MonService.exe&quot; `
+    -DisplayName &quot;Mon Service ZebraPuma&quot; `
+    -StartupType Automatic
+
+# Méthode 3 : InstallUtil (legacy)
+InstallUtil.exe C:\MonApp\MonService.exe
+</code></pre>
+<h3 id="configuration-du-service">Configuration du Service</h3>
+<pre><code class="lang-powershell"># Changer le compte de démarrage
+sc config MonService obj=&quot;DOMAIN\ServiceAccount&quot; password=&quot;P@ssw0rd&quot;
+
+# Définir la description
+sc description MonService &quot;Service de traitement ZebraPuma&quot;
+
+# Configurer la récupération sur échec
+sc failure MonService reset=86400 actions=restart/5000/restart/10000/restart/30000
+</code></pre>
+<h3 id="contrôle-du-service">Contrôle du Service</h3>
+<pre><code class="lang-powershell"># Démarrer
+Start-Service MonService
+# ou
+sc start MonService
+
+# Arrêter
+Stop-Service MonService
+# ou
+sc stop MonService
+
+# Redémarrer
+Restart-Service MonService
+
+# Vérifier l'état
+Get-Service MonService
+# ou
+sc query MonService
+</code></pre>
+<h3 id="désinstallation">Désinstallation</h3>
+<pre><code class="lang-powershell"># Arrêter d'abord
+Stop-Service MonService
+
+# Supprimer
+sc delete MonService
+# ou
+Remove-Service MonService
+</code></pre>
+<hr>
+<h2 id="bonnes-pratiques">Bonnes Pratiques</h2>
+<h3 id="1-thread-safety">1. Thread Safety</h3>
+<p>✅ <strong>Bon</strong> - Utiliser des CancellationToken</p>
+<pre><code class="lang-csharp">private CancellationTokenSource _cts;
+
+protected override void OnStartCore(string[] args)
+{
+    _cts = new CancellationTokenSource();
+    Task.Run(() =&gt; DoWork(_cts.Token), _cts.Token);
+}
+
+protected override void OnStopCore()
+{
+    _cts?.Cancel();
+}
+</code></pre>
+<h3 id="2-timeout-sur-onstopcore">2. Timeout sur OnStopCore</h3>
+<p>✅ <strong>Bon</strong> - Toujours implémenter un timeout</p>
+<pre><code class="lang-csharp">protected override void OnStopCore()
+{
+    _cts?.Cancel();
+    
+    if (!_task.Wait(TimeSpan.FromSeconds(30)))
+    {
+        Logger.Warn(&quot;Timeout lors de l'arrêt&quot;);
+    }
+}
+</code></pre>
+<h3 id="3-logging-structuré">3. Logging Structuré</h3>
+<p>✅ <strong>Bon</strong></p>
+<pre><code class="lang-csharp">Logger.Info(&quot;Service {Name} démarré avec {Count} workers&quot;, Name, workerCount);
+Logger.Error(ex, &quot;Erreur lors du traitement de {Item}&quot;, item);
+</code></pre>
+<h3 id="4-gestion-derreurs">4. Gestion d'Erreurs</h3>
+<p>✅ <strong>Bon</strong></p>
+<pre><code class="lang-csharp">protected override void OnStartCore(string[] args)
+{
+    try
+    {
+        // Initialisation critique
+        InitializeDatabase();
+    }
+    catch (Exception ex)
+    {
+        Logger.Fatal(ex, &quot;Échec d'initialisation critique&quot;);
+        throw; // Laisser remonter pour que IsRunning reste false
+    }
+}
+</code></pre>
+<h3 id="5-ressources">5. Ressources</h3>
+<p>✅ <strong>Bon</strong></p>
+<pre><code class="lang-csharp">protected override void DisposeManagedResources()
+{
+    _timer?.Dispose();
+    _connection?.Close();
+    _connection?.Dispose();
+}
+</code></pre>
+<hr>
+<p><strong><a href="../index.html">⬅️ Retour à la documentation principale</a></strong></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/docs/articles/serviceprocess.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © 2025-2026 Régis SCYEUR - Zebra Puma Services. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ZebraPuma.Plugins | ZebraPuma Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ZebraPuma.Plugins | ZebraPuma Documentation ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/docs/articles/plugins.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="ZebraPuma">
+            ZebraPuma
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="zebrapumaplugins">ZebraPuma.Plugins</h1>
+
+<p><strong>Système de Plugins Modulaire avec Chargement Dynamique</strong></p>
+<hr>
+<h2 id="-table-des-matières">📋 Table des Matières</h2>
+<ul>
+<li><a href="#vue-densemble">Vue d'ensemble</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#interfaces-et-classes">Interfaces et Classes</a></li>
+<li><a href="#pluginloader">PluginLoader</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#utilisation">Utilisation</a></li>
+<li><a href="#exemples">Exemples</a></li>
+<li><a href="#api-r%C3%A9f%C3%A9rence">API Référence</a></li>
+<li><a href="#bonnes-pratiques">Bonnes Pratiques</a></li>
+</ul>
+<hr>
+<h2 id="vue-densemble">Vue d'ensemble</h2>
+<p><strong>ZebraPuma.Plugins</strong> est une bibliothèque de base pour créer des applications modulaires et extensibles en .NET. Elle fournit un système de plugins robuste avec chargement dynamique, auto-découverte, et gestion du cycle de vie.</p>
+<h3 id="caractéristiques-principales">Caractéristiques Principales</h3>
+<ul>
+<li>✅ <strong>Chargement dynamique</strong> de plugins depuis DLL</li>
+<li>✅ <strong>Auto-découverte</strong> des plugins dans les dossiers configurés</li>
+<li>✅ <strong>Configuration JSON</strong> flexible (plugins.json)</li>
+<li>✅ <strong>Résolution automatique</strong> des dépendances d'assemblies</li>
+<li>✅ <strong>Gestion du cycle de vie</strong> complet (Initialize, Dispose)</li>
+<li>✅ <strong>Support multi-frameworks</strong> (.NET Framework 4.8 et .NET 10.0)</li>
+<li>✅ <strong>Pattern Dispose</strong> intégré pour la gestion des ressources</li>
+<li>✅ <strong>Contexte d'initialisation</strong> avec propriétés personnalisables</li>
+</ul>
+<h3 id="cibles-supportées">Cibles Supportées</h3>
+<ul>
+<li><strong>.NET Framework 4.8</strong></li>
+<li><strong>.NET 10.0</strong></li>
+</ul>
+<h3 id="dépendances">Dépendances</h3>
+<ul>
+<li><strong>Newtonsoft.Json</strong> 13.0.4</li>
+<li><strong>NLog</strong> 6.0.7</li>
+</ul>
+<hr>
+<h2 id="architecture">Architecture</h2>
+<h3 id="diagramme-de-composants">Diagramme de Composants</h3>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│                   Application Host                       │
+│                                                           │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │              PluginLoader                          │  │
+│  │  • LoadPlugins&lt;TPlugin&gt;()                         │  │
+│  │  • Configuration (plugins.json)                    │  │
+│  │  • Auto-discovery                                  │  │
+│  │  • Assembly Resolver                               │  │
+│  └────────────────────────────────────────────────────┘  │
+│                          │                               │
+│                          ▼                               │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │           IPluginContext                           │  │
+│  │  • BaseDirectory                                   │  │
+│  │  • PluginDirectory                                 │  │
+│  │  • Properties (Dictionary)                         │  │
+│  └────────────────────────────────────────────────────┘  │
+│                          │                               │
+└──────────────────────────┼───────────────────────────────┘
+                           │
+         ┌─────────────────┴─────────────────┐
+         │                                   │
+         ▼                                   ▼
+┌─────────────────┐              ┌─────────────────┐
+│  Plugin A       │              │  Plugin B       │
+│  • IPlugin      │              │  • IPlugin      │
+│  • Initialize() │              │  • Initialize() │
+│  • Dispose()    │              │  • Dispose()    │
+└─────────────────┘              └─────────────────┘
+</code></pre>
+<h3 id="flux-de-chargement">Flux de Chargement</h3>
+<pre><code>1. Application démarre
+        ↓
+2. Appel LoadPlugins&lt;T&gt;()
+        ↓
+3. Lecture plugins.json (si existe)
+        ↓
+4. Auto-discovery (si activé)
+        ↓
+5. Résolution des chemins et assemblies
+        ↓
+6. Activation PluginAssemblyResolver
+        ↓
+7. Chargement Assembly.LoadFrom()
+        ↓
+8. Création instances Activator.CreateInstance()
+        ↓
+9. Appel Initialize(context) sur chaque plugin
+        ↓
+10. Retour des plugins chargés
+</code></pre>
+<hr>
+<h2 id="interfaces-et-classes">Interfaces et Classes</h2>
+<h3 id="iplugin">IPlugin</h3>
+<p>Interface de base que tous les plugins doivent implémenter.</p>
+<pre><code class="lang-csharp">public interface IPlugin : IDisposable
+{
+    /// &lt;summary&gt;
+    /// Nom unique du plugin.
+    /// &lt;/summary&gt;
+    string Name { get; }
+
+    /// &lt;summary&gt;
+    /// Version du plugin (ex: &quot;1.0.0&quot;).
+    /// &lt;/summary&gt;
+    string Version { get; }
+
+    /// &lt;summary&gt;
+    /// Description optionnelle du plugin.
+    /// &lt;/summary&gt;
+    string Description { get; }
+
+    /// &lt;summary&gt;
+    /// Initialise le plugin après son chargement.
+    /// &lt;/summary&gt;
+    void Initialize(IPluginContext context);
+}
+</code></pre>
+<h3 id="iplugincontext">IPluginContext</h3>
+<p>Contexte fourni lors de l'initialisation du plugin.</p>
+<pre><code class="lang-csharp">public interface IPluginContext
+{
+    /// &lt;summary&gt;
+    /// Répertoire de base de l'application.
+    /// &lt;/summary&gt;
+    string BaseDirectory { get; }
+
+    /// &lt;summary&gt;
+    /// Répertoire du plugin spécifique.
+    /// &lt;/summary&gt;
+    string PluginDirectory { get; }
+
+    /// &lt;summary&gt;
+    /// Propriétés personnalisées (dictionnaire clé-valeur).
+    /// &lt;/summary&gt;
+    IDictionary&lt;string, object&gt; Properties { get; }
+}
+</code></pre>
+<h3 id="pluginbase">PluginBase</h3>
+<p>Classe de base abstraite facilitant l'implémentation de plugins avec pattern Dispose.</p>
+<pre><code class="lang-csharp">public abstract class PluginBase : IPlugin
+{
+    public abstract string Name { get; }
+    
+    public virtual string Version =&gt; 
+        GetType().Assembly.GetName().Version?.ToString() ?? &quot;1.0.0&quot;;
+    
+    public virtual string Description =&gt; string.Empty;
+    
+    protected IPluginContext Context { get; private set; }
+    
+    public virtual void Initialize(IPluginContext context)
+    {
+        Context = context;
+    }
+    
+    protected virtual void DisposeManagedResources() { }
+    
+    protected virtual void DisposeUnmanagedResources() { }
+    
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+    
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!_disposed)
+        {
+            if (disposing)
+            {
+                DisposeManagedResources();
+            }
+            DisposeUnmanagedResources();
+            _disposed = true;
+        }
+    }
+}
+</code></pre>
+<hr>
+<h2 id="pluginloader">PluginLoader</h2>
+<p>La classe statique <code>PluginLoader</code> est le point d'entrée principal pour charger les plugins.</p>
+<h3 id="méthode-principale">Méthode Principale</h3>
+<pre><code class="lang-csharp">public static IReadOnlyList&lt;TPlugin&gt; LoadPlugins&lt;TPlugin&gt;(
+    PluginLoadingOptions options = null
+) where TPlugin : class, IPlugin
+</code></pre>
+<h3 id="options-de-chargement">Options de Chargement</h3>
+<pre><code class="lang-csharp">public sealed class PluginLoadingOptions
+{
+    /// &lt;summary&gt;
+    /// Répertoire de base. Défaut: AppDomain.CurrentDomain.BaseDirectory
+    /// &lt;/summary&gt;
+    public string BaseDirectory { get; set; }
+    
+    /// &lt;summary&gt;
+    /// Nom du dossier contenant les plugins. Défaut: &quot;Plugins&quot;
+    /// &lt;/summary&gt;
+    public string PluginsDirectoryName { get; set; } = &quot;Plugins&quot;;
+    
+    /// &lt;summary&gt;
+    /// Nom du fichier de configuration. Défaut: &quot;plugins.json&quot;
+    /// &lt;/summary&gt;
+    public string ConfigFileName { get; set; } = &quot;plugins.json&quot;;
+    
+    /// &lt;summary&gt;
+    /// Override du flag AutoDiscover du fichier JSON
+    /// &lt;/summary&gt;
+    public bool? AutoDiscoverOverride { get; set; }
+}
+</code></pre>
+<h3 id="pluginconfigloader">PluginConfigLoader</h3>
+<p>Utilitaire pour charger la configuration JSON d'un plugin.</p>
+<pre><code class="lang-csharp">public static class PluginConfigLoader
+{
+    /// &lt;summary&gt;
+    /// Charge un fichier JSON nommé d'après l'assembly (en minuscule).
+    /// Exemple: MonPlugin.dll -&gt; monplugin.json
+    /// &lt;/summary&gt;
+    public static TConfig LoadAssemblyConfig&lt;TConfig&gt;()
+}
+</code></pre>
+<h3 id="pluginassemblyresolver">PluginAssemblyResolver</h3>
+<p>Résout automatiquement les dépendances d'assemblies des plugins.</p>
+<p><strong>Fonctionnement :</strong></p>
+<ol>
+<li>Intercepte les événements <code>AssemblyResolve</code></li>
+<li>Recherche d'abord dans le répertoire du plugin demandeur</li>
+<li>Recherche ensuite dans tous les répertoires de plugins</li>
+<li>Charge l'assembly avec <code>Assembly.LoadFrom()</code></li>
+</ol>
+<hr>
+<h2 id="configuration">Configuration</h2>
+<h3 id="structure-du-fichier-pluginsjson">Structure du fichier plugins.json</h3>
+<pre><code class="lang-json">{
+  &quot;AutoDiscover&quot;: true,
+  &quot;Plugins&quot;: [
+    {
+      &quot;Folder&quot;: &quot;MonPlugin&quot;,
+      &quot;Assembly&quot;: &quot;MonPlugin.dll&quot;,
+      &quot;Type&quot;: &quot;MonNamespace.MonPlugin&quot;
+    },
+    {
+      &quot;Folder&quot;: &quot;AutrePlugin&quot;,
+      &quot;Assembly&quot;: &quot;AutrePlugin.dll&quot;,
+      &quot;Type&quot;: &quot;AutreNamespace.AutrePlugin&quot;
+    }
+  ]
+}
+</code></pre>
+<h3 id="propriétés">Propriétés</h3>
+<table>
+<thead>
+<tr>
+<th>Propriété</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AutoDiscover</code></td>
+<td>bool</td>
+<td>Active la découverte automatique des plugins dans les sous-dossiers</td>
+</tr>
+<tr>
+<td><code>Plugins</code></td>
+<td>array</td>
+<td>Liste des plugins à charger explicitement</td>
+</tr>
+<tr>
+<td><code>Plugins[].Folder</code></td>
+<td>string</td>
+<td>Nom du sous-dossier dans le répertoire Plugins/</td>
+</tr>
+<tr>
+<td><code>Plugins[].Assembly</code></td>
+<td>string</td>
+<td>Nom du fichier DLL</td>
+</tr>
+<tr>
+<td><code>Plugins[].Type</code></td>
+<td>string</td>
+<td>Nom complet du type (Namespace.Classe)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modes-de-chargement">Modes de Chargement</h3>
+<p><strong>Mode 1 : Configuration Explicite Uniquement</strong></p>
+<pre><code class="lang-json">{
+  &quot;AutoDiscover&quot;: false,
+  &quot;Plugins&quot;: [ ... ]
+}
+</code></pre>
+<p>Charge uniquement les plugins listés.</p>
+<p><strong>Mode 2 : Auto-Discovery Uniquement</strong></p>
+<pre><code class="lang-json">{
+  &quot;AutoDiscover&quot;: true
+}
+</code></pre>
+<p>Scanne automatiquement tous les sous-dossiers de <code>Plugins/</code>.</p>
+<p><strong>Mode 3 : Mixte (Recommandé)</strong></p>
+<pre><code class="lang-json">{
+  &quot;AutoDiscover&quot;: true,
+  &quot;Plugins&quot;: [ ... ]
+}
+</code></pre>
+<p>Charge les plugins listés ET scanne pour d'autres plugins.</p>
+<hr>
+<h2 id="utilisation">Utilisation</h2>
+<h3 id="scénario-1--plugin-simple">Scénario 1 : Plugin Simple</h3>
+<h4 id="étape-1--créer-le-plugin">Étape 1 : Créer le Plugin</h4>
+<pre><code class="lang-csharp">using ZebraPuma.Plugins;
+
+namespace MonApp.Plugins
+{
+    public class MonPlugin : PluginBase
+    {
+        public override string Name =&gt; &quot;MonPlugin&quot;;
+        public override string Description =&gt; &quot;Un plugin d'exemple&quot;;
+
+        public override void Initialize(IPluginContext context)
+        {
+            base.Initialize(context);
+            Console.WriteLine($&quot;Plugin initialisé dans {context.PluginDirectory}&quot;);
+        }
+
+        protected override void DisposeManagedResources()
+        {
+            Console.WriteLine(&quot;Nettoyage des ressources&quot;);
+        }
+    }
+}
+</code></pre>
+<h4 id="étape-2--compiler-et-déployer">Étape 2 : Compiler et Déployer</h4>
+<pre><code class="lang-powershell"># Compiler le plugin
+dotnet build MonPlugin.csproj
+
+# Créer le dossier de déploiement
+mkdir AppHost\Plugins\MonPlugin
+
+# Copier la DLL
+copy bin\Debug\net10.0\MonPlugin.dll AppHost\Plugins\MonPlugin\
+</code></pre>
+<h4 id="étape-3--configurer-optionnel">Étape 3 : Configurer (optionnel)</h4>
+<p>Créer <code>AppHost/plugins.json</code> :</p>
+<pre><code class="lang-json">{
+  &quot;AutoDiscover&quot;: true
+}
+</code></pre>
+<h4 id="étape-4--charger-dans-lapplication">Étape 4 : Charger dans l'Application</h4>
+<pre><code class="lang-csharp">using ZebraPuma.Plugins;
+
+class Program
+{
+    static void Main()
+    {
+        var plugins = PluginLoader.LoadPlugins&lt;IPlugin&gt;();
+        
+        foreach (var plugin in plugins)
+        {
+            Console.WriteLine($&quot;Plugin: {plugin.Name} v{plugin.Version}&quot;);
+            Console.WriteLine($&quot;Description: {plugin.Description}&quot;);
+        }
+
+        // Cleanup
+        foreach (var plugin in plugins)
+        {
+            plugin.Dispose();
+        }
+    }
+}
+</code></pre>
+<h3 id="scénario-2--plugin-avec-configuration">Scénario 2 : Plugin avec Configuration</h3>
+<h4 id="configuration-du-plugin-monpluginjson">Configuration du Plugin (monplugin.json)</h4>
+<pre><code class="lang-json">{
+  &quot;DatabaseConnection&quot;: &quot;Server=localhost;Database=test;&quot;,
+  &quot;MaxRetries&quot;: 3,
+  &quot;EnableLogging&quot;: true
+}
+</code></pre>
+<h4 id="classe-de-configuration">Classe de Configuration</h4>
+<pre><code class="lang-csharp">public class MonPluginConfig
+{
+    public string DatabaseConnection { get; set; }
+    public int MaxRetries { get; set; }
+    public bool EnableLogging { get; set; }
+}
+</code></pre>
+<h4 id="plugin-avec-configuration">Plugin avec Configuration</h4>
+<pre><code class="lang-csharp">public class MonPlugin : PluginBase
+{
+    private MonPluginConfig _config;
+
+    public override string Name =&gt; &quot;MonPlugin&quot;;
+
+    public override void Initialize(IPluginContext context)
+    {
+        base.Initialize(context);
+        
+        // Charger la configuration
+        _config = PluginConfigLoader.LoadAssemblyConfig&lt;MonPluginConfig&gt;();
+        
+        if (_config.EnableLogging)
+        {
+            Console.WriteLine($&quot;Connexion: {_config.DatabaseConnection}&quot;);
+        }
+    }
+}
+</code></pre>
+<h3 id="scénario-3--interface-de-plugin-personnalisée">Scénario 3 : Interface de Plugin Personnalisée</h3>
+<pre><code class="lang-csharp">// Définir une interface spécialisée
+public interface IDataProcessor : IPlugin
+{
+    void ProcessData(string input);
+    string GetResult();
+}
+
+// Implémenter l'interface
+public class CsvProcessor : PluginBase, IDataProcessor
+{
+    private string _result;
+
+    public override string Name =&gt; &quot;CsvProcessor&quot;;
+
+    public void ProcessData(string input)
+    {
+        _result = $&quot;Processed: {input}&quot;;
+    }
+
+    public string GetResult() =&gt; _result;
+}
+
+// Charger uniquement les plugins de ce type
+var processors = PluginLoader.LoadPlugins&lt;IDataProcessor&gt;();
+foreach (var processor in processors)
+{
+    processor.ProcessData(&quot;test.csv&quot;);
+    Console.WriteLine(processor.GetResult());
+}
+</code></pre>
+<hr>
+<h2 id="exemples">Exemples</h2>
+<h3 id="exemple-1--application-console-multi-plugins">Exemple 1 : Application Console Multi-Plugins</h3>
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+using ZebraPuma.Plugins;
+
+namespace PluginHost
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(&quot;=== Plugin Host ===\n&quot;);
+
+            var options = new PluginLoader.PluginLoadingOptions
+            {
+                PluginsDirectoryName = &quot;Plugins&quot;,
+                ConfigFileName = &quot;plugins.json&quot;,
+                AutoDiscoverOverride = true
+            };
+
+            var plugins = PluginLoader.LoadPlugins&lt;IPlugin&gt;(options);
+
+            Console.WriteLine($&quot;Chargé {plugins.Count} plugin(s):\n&quot;);
+
+            foreach (var plugin in plugins)
+            {
+                Console.WriteLine($&quot;  • {plugin.Name}&quot;);
+                Console.WriteLine($&quot;    Version: {plugin.Version}&quot;);
+                Console.WriteLine($&quot;    Description: {plugin.Description}\n&quot;);
+            }
+
+            Console.WriteLine(&quot;Appuyez sur une touche pour terminer...&quot;);
+            Console.ReadKey();
+
+            // Cleanup
+            foreach (var plugin in plugins)
+            {
+                plugin.Dispose();
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="exemple-2--plugin-avec-logging-nlog">Exemple 2 : Plugin avec Logging NLog</h3>
+<pre><code class="lang-csharp">using NLog;
+using ZebraPuma.Plugins;
+
+public class LoggingPlugin : PluginBase
+{
+    private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
+    public override string Name =&gt; &quot;LoggingPlugin&quot;;
+
+    public override void Initialize(IPluginContext context)
+    {
+        base.Initialize(context);
+        
+        Logger.Info(&quot;Plugin {Name} initialisé&quot;, Name);
+        Logger.Debug(&quot;BaseDirectory: {Dir}&quot;, context.BaseDirectory);
+        Logger.Debug(&quot;PluginDirectory: {Dir}&quot;, context.PluginDirectory);
+    }
+
+    protected override void DisposeManagedResources()
+    {
+        Logger.Info(&quot;Plugin {Name} en cours de fermeture&quot;, Name);
+    }
+}
+</code></pre>
+<h3 id="exemple-3--structure-de-projet-complète">Exemple 3 : Structure de Projet Complète</h3>
+<pre><code>MonApplication/
+├── MonApplication.csproj
+├── Program.cs
+├── plugins.json
+├── NLog.config
+├── Plugins/
+│   ├── PluginA/
+│   │   ├── PluginA.dll
+│   │   ├── PluginA.pdb
+│   │   ├── plugina.json
+│   │   └── dependance.dll
+│   ├── PluginB/
+│   │   ├── PluginB.dll
+│   │   ├── PluginB.pdb
+│   │   └── pluginb.json
+│   └── PluginC/
+│       └── PluginC.dll
+└── logs/
+    └── {date}.log
+</code></pre>
+<p><strong>plugins.json</strong></p>
+<pre><code class="lang-json">{
+  &quot;AutoDiscover&quot;: true,
+  &quot;Plugins&quot;: [
+    {
+      &quot;Folder&quot;: &quot;PluginA&quot;,
+      &quot;Assembly&quot;: &quot;PluginA.dll&quot;,
+      &quot;Type&quot;: &quot;MonApp.Plugins.PluginA&quot;
+    }
+  ]
+}
+</code></pre>
+<hr>
+<h2 id="api-référence">API Référence</h2>
+<h3 id="namespace-zebrapumaplugins">Namespace: ZebraPuma.Plugins</h3>
+<h4 id="classes">Classes</h4>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PluginBase</code></td>
+<td>Classe de base abstraite pour plugins</td>
+</tr>
+<tr>
+<td><code>PluginLoader</code></td>
+<td>Chargeur de plugins statique</td>
+</tr>
+<tr>
+<td><code>PluginConfigLoader</code></td>
+<td>Utilitaire pour charger config JSON</td>
+</tr>
+</tbody>
+</table>
+<h4 id="interfaces">Interfaces</h4>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IPlugin</code></td>
+<td>Contrat de base pour tous les plugins</td>
+</tr>
+<tr>
+<td><code>IPluginContext</code></td>
+<td>Contexte d'initialisation</td>
+</tr>
+</tbody>
+</table>
+<h4 id="types">Types</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PluginLoadingOptions</code></td>
+<td>Options de chargement de plugins</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="bonnes-pratiques">Bonnes Pratiques</h2>
+<h3 id="1-nommage-et-versioning">1. Nommage et Versioning</h3>
+<p>✅ <strong>Bon</strong></p>
+<pre><code class="lang-csharp">public class DataExportPlugin : PluginBase
+{
+    public override string Name =&gt; &quot;DataExportPlugin&quot;;
+    public override string Version =&gt; &quot;2.1.0&quot;;
+    public override string Description =&gt; &quot;Exporte les données au format CSV et JSON&quot;;
+}
+</code></pre>
+<p>❌ <strong>Mauvais</strong></p>
+<pre><code class="lang-csharp">public class Plugin1 : PluginBase
+{
+    public override string Name =&gt; &quot;p1&quot;;
+    public override string Version =&gt; &quot;1&quot;;
+}
+</code></pre>
+<h3 id="2-gestion-des-ressources">2. Gestion des Ressources</h3>
+<p>✅ <strong>Bon</strong></p>
+<pre><code class="lang-csharp">public class DatabasePlugin : PluginBase
+{
+    private SqlConnection _connection;
+
+    public override void Initialize(IPluginContext context)
+    {
+        base.Initialize(context);
+        _connection = new SqlConnection(connectionString);
+        _connection.Open();
+    }
+
+    protected override void DisposeManagedResources()
+    {
+        _connection?.Close();
+        _connection?.Dispose();
+    }
+}
+</code></pre>
+<p>❌ <strong>Mauvais</strong> (fuite de ressources)</p>
+<pre><code class="lang-csharp">public class DatabasePlugin : PluginBase
+{
+    private SqlConnection _connection;
+
+    public override void Initialize(IPluginContext context)
+    {
+        _connection = new SqlConnection(connectionString);
+        _connection.Open();
+        // Pas de Dispose!
+    }
+}
+</code></pre>
+<h3 id="3-gestion-derreurs">3. Gestion d'Erreurs</h3>
+<p>✅ <strong>Bon</strong></p>
+<pre><code class="lang-csharp">public override void Initialize(IPluginContext context)
+{
+    try
+    {
+        base.Initialize(context);
+        
+        var config = PluginConfigLoader.LoadAssemblyConfig&lt;Config&gt;();
+        // ... initialisation
+    }
+    catch (FileNotFoundException ex)
+    {
+        Logger.Error(ex, &quot;Fichier de configuration introuvable&quot;);
+        throw new PluginInitializationException(&quot;Config manquante&quot;, ex);
+    }
+    catch (Exception ex)
+    {
+        Logger.Fatal(ex, &quot;Erreur critique d'initialisation&quot;);
+        throw;
+    }
+}
+</code></pre>
+<h3 id="4-configuration">4. Configuration</h3>
+<p>✅ <strong>Bon</strong> - Configuration typée</p>
+<pre><code class="lang-csharp">public class MyPluginConfig
+{
+    [JsonProperty(&quot;connectionString&quot;)]
+    public string ConnectionString { get; set; }
+    
+    [JsonProperty(&quot;timeout&quot;)]
+    public int Timeout { get; set; } = 30;
+}
+
+var config = PluginConfigLoader.LoadAssemblyConfig&lt;MyPluginConfig&gt;();
+</code></pre>
+<p>❌ <strong>Mauvais</strong> - Configuration en dur</p>
+<pre><code class="lang-csharp">const string connectionString = &quot;Server=localhost;...&quot;;
+</code></pre>
+<h3 id="5-dépendances">5. Dépendances</h3>
+<p>✅ <strong>Bon</strong> - Dépendances dans le dossier du plugin</p>
+<pre><code>Plugins/
+  MonPlugin/
+    MonPlugin.dll
+    Newtonsoft.Json.dll
+    NLog.dll
+</code></pre>
+<p>❌ <strong>Mauvais</strong> - Dépendances manquantes</p>
+<pre><code>Plugins/
+  MonPlugin/
+    MonPlugin.dll
+    // Newtonsoft.Json.dll manquant -&gt; Crash!
+</code></pre>
+<h3 id="6-thread-safety">6. Thread Safety</h3>
+<p>✅ <strong>Bon</strong></p>
+<pre><code class="lang-csharp">public class ThreadSafePlugin : PluginBase
+{
+    private readonly object _lock = new object();
+    private int _counter;
+
+    public void IncrementCounter()
+    {
+        lock (_lock)
+        {
+            _counter++;
+        }
+    }
+}
+</code></pre>
+<h3 id="7-logging">7. Logging</h3>
+<p>✅ <strong>Bon</strong></p>
+<pre><code class="lang-csharp">private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
+public override void Initialize(IPluginContext context)
+{
+    Logger.Info(&quot;Initialisation de {Plugin} v{Version}&quot;, Name, Version);
+    Logger.Debug(&quot;Context: {@Context}&quot;, context);
+    
+    try
+    {
+        // ... code
+        Logger.Info(&quot;Initialisation réussie&quot;);
+    }
+    catch (Exception ex)
+    {
+        Logger.Error(ex, &quot;Échec d'initialisation&quot;);
+        throw;
+    }
+}
+</code></pre>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="problème--plugin-non-chargé">Problème : Plugin Non Chargé</h3>
+<p><strong>Symptôme</strong> : Le plugin n'apparaît pas dans la liste</p>
+<p><strong>Solutions</strong> :</p>
+<ol>
+<li>Vérifier <code>plugins.json</code> existe et est bien formé</li>
+<li>Vérifier <code>AutoDiscover</code> est <code>true</code> ou plugin est listé</li>
+<li>Vérifier le chemin <code>Folder</code> et <code>Assembly</code></li>
+<li>Vérifier que la classe implémente <code>IPlugin</code></li>
+<li>Consulter les logs NLog</li>
+</ol>
+<h3 id="problème--filenotfoundexception">Problème : FileNotFoundException</h3>
+<p><strong>Symptôme</strong> : Exception lors du chargement</p>
+<p><strong>Solutions</strong> :</p>
+<ol>
+<li>Vérifier que toutes les DLL sont présentes</li>
+<li>Copier les dépendances dans le dossier du plugin</li>
+<li>Utiliser Fusion Log Viewer pour diagnostiquer</li>
+<li>Vérifier les versions de .NET</li>
+</ol>
+<h3 id="problème--invalidcastexception">Problème : InvalidCastException</h3>
+<p><strong>Symptôme</strong> : Erreur de cast lors du chargement</p>
+<p><strong>Solutions</strong> :</p>
+<ol>
+<li>Vérifier que le plugin implémente l'interface demandée</li>
+<li>Vérifier la signature <code>where TPlugin : class, IPlugin</code></li>
+<li>Reconstruire le plugin avec les bonnes références</li>
+</ol>
+<hr>
+<h2 id="performance">Performance</h2>
+<h3 id="recommandations">Recommandations</h3>
+<ol>
+<li><strong>Cache des plugins</strong> : Ne pas recharger à chaque utilisation</li>
+<li><strong>Lazy loading</strong> : Charger uniquement quand nécessaire</li>
+<li><strong>Dispose</strong> : Toujours libérer les ressources</li>
+<li><strong>Assembly resolver</strong> : Dispose du resolver quand terminé</li>
+</ol>
+<h3 id="métriques-typiques">Métriques Typiques</h3>
+<table>
+<thead>
+<tr>
+<th>Opération</th>
+<th>Temps Moyen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chargement 1 plugin</td>
+<td>50-100 ms</td>
+</tr>
+<tr>
+<td>Chargement 10 plugins</td>
+<td>300-500 ms</td>
+</tr>
+<tr>
+<td>Initialize d'un plugin</td>
+<td>10-50 ms</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong><a href="../index.html">⬅️ Retour à la documentation principale</a></strong></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/docs/articles/plugins.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © 2025-2026 Régis SCYEUR - Zebra Puma Services. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

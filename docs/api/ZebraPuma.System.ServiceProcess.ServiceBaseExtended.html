@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ServiceBaseExtended | ZebraPuma Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ServiceBaseExtended | ZebraPuma Documentation ">
+      
+      <meta name="description" content="Classe de base abstraite pour cr&#233;er des services Windows extensibles avec support de plugins. Combine  de Windows avec . G&#232;re automatiquement le cycle de vie et la synchronisation thread-safe.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZebraPumaOrg/ZebraPuma/new/main/apiSpec/new?filename=ZebraPuma_System_ServiceProcess_ServiceBaseExtended.md&amp;value=---%0Auid%3A%20ZebraPuma.System.ServiceProcess.ServiceBaseExtended%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="ZebraPuma">
+            ZebraPuma
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended">
+
+
+
+  <h1 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended" class="text-break">
+Class ServiceBaseExtended  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ZebraPuma.html">ZebraPuma</a>.<a class="xref" href="ZebraPuma.System.html">System</a>.<a class="xref" href="ZebraPuma.System.ServiceProcess.html">ServiceProcess</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ZebraPuma.System.ServiceProcess.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Classe de base abstraite pour créer des services Windows extensibles avec support de plugins.
+Combine <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase">ServiceBase</a> de Windows avec <a class="xref" href="ZebraPuma.System.ServiceProcess.IServiceExtended.html">IServiceExtended</a>.
+Gère automatiquement le cycle de vie et la synchronisation thread-safe.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ServiceBaseExtended : ServiceBase, IComponent, IServiceExtended, IPlugin, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject">MarshalByRefObject</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component">Component</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase">ServiceBase</a></div>
+      <div><span class="xref">ServiceBaseExtended</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.icomponent">IComponent</a></div>
+      <div><a class="xref" href="ZebraPuma.System.ServiceProcess.IServiceExtended.html">IServiceExtended</a></div>
+      <div><a class="xref" href="ZebraPuma.Plugins.IPlugin.html">IPlugin</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.maxnamelength">ServiceBase.MaxNameLength</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.requestadditionaltime">ServiceBase.RequestAdditionalTime(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.oncontinue">ServiceBase.OnContinue()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.onpause">ServiceBase.OnPause()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.onpowerevent">ServiceBase.OnPowerEvent(PowerBroadcastStatus)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.onsessionchange">ServiceBase.OnSessionChange(SessionChangeDescription)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.onshutdown">ServiceBase.OnShutdown()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.oncustomcommand">ServiceBase.OnCustomCommand(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.run#system-serviceprocess-servicebase-run(system-serviceprocess-servicebase())">ServiceBase.Run(ServiceBase[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.run#system-serviceprocess-servicebase-run(system-serviceprocess-servicebase)">ServiceBase.Run(ServiceBase)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.stop">ServiceBase.Stop()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.autolog">ServiceBase.AutoLog</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.exitcode">ServiceBase.ExitCode</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.canhandlepowerevent">ServiceBase.CanHandlePowerEvent</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.canhandlesessionchangeevent">ServiceBase.CanHandleSessionChangeEvent</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.canpauseandcontinue">ServiceBase.CanPauseAndContinue</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.canshutdown">ServiceBase.CanShutdown</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.canstop">ServiceBase.CanStop</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.eventlog">ServiceBase.EventLog</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.servicehandle">ServiceBase.ServiceHandle</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.serviceprocess.servicebase.servicename">ServiceBase.ServiceName</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.dispose#system-componentmodel-component-dispose">Component.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.getservice">Component.GetService(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.tostring">Component.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.canraiseevents">Component.CanRaiseEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.events">Component.Events</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.site">Component.Site</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.container">Component.Container</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.designmode">Component.DesignMode</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.component.disposed">Component.Disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.memberwiseclone">MarshalByRefObject.MemberwiseClone(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.getlifetimeservice">MarshalByRefObject.GetLifetimeService()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.initializelifetimeservice">MarshalByRefObject.InitializeLifetimeService()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.createobjref">MarshalByRefObject.CreateObjRef(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Description_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Description*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Description" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Description">
+  Description
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Description optionnelle du plugin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Description { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_IsRunning_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.IsRunning*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_IsRunning" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.IsRunning">
+  IsRunning
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indique si le service est actuellement en cours d'exécution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRunning { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Name_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Name*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Name" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Nom unique du plugin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Version_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Version*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Version" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Version">
+  Version
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Version du plugin (ex: &quot;1.0.0&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Version { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Dispose_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Dispose*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Dispose_System_Boolean_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Dispose(System.Boolean)">
+  Dispose(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Libère les ressources utilisées par le service.
+Arrête automatiquement le service s'il est en cours d'exécution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True si appelé depuis Dispose(), false si appelé depuis le finaliseur.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Initialize_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Initialize*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_Initialize_ZebraPuma_Plugins_IPluginContext_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.Initialize(ZebraPuma.Plugins.IPluginContext)">
+  Initialize(IPluginContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initialise le plugin après son chargement.
+Appelé automatiquement par le PluginLoader après l'instanciation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Initialize(IPluginContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>context</code> <a class="xref" href="ZebraPuma.Plugins.IPluginContext.html">IPluginContext</a></dt>
+    <dd><p>Contexte d'initialisation contenant les informations sur l'environnement.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_OnStart_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.OnStart*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_OnStart_System_String___" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.OnStart(System.String[])">
+  OnStart(string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Méthode appelée par Windows lors du démarrage du service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override sealed void OnStart(string[] args)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>args</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>Arguments de démarrage fournis par Windows.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_OnStartCore_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.OnStartCore*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_OnStartCore_System_String___" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.OnStartCore(System.String[])">
+  OnStartCore(string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Méthode à surcharger pour implémenter la logique de démarrage du service.
+Appelée de manière thread-safe.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnStartCore(string[] args)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>args</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>Arguments de démarrage.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_OnStop_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.OnStop*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_OnStop" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.OnStop">
+  OnStop()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Méthode appelée par Windows lors de l'arrêt du service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override sealed void OnStop()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_OnStopCore_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.OnStopCore*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_OnStopCore" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.OnStopCore">
+  OnStopCore()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Méthode à surcharger pour implémenter la logique d'arrêt du service.
+Appelée de manière thread-safe.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnStopCore()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_StartService_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.StartService*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_StartService" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.StartService">
+  StartService()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Démarre le service Windows.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StartService()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_StopService_" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.StopService*"></a>
+
+  <h3 id="ZebraPuma_System_ServiceProcess_ServiceBaseExtended_StopService" data-uid="ZebraPuma.System.ServiceProcess.ServiceBaseExtended.StopService">
+  StopService()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arrête le service Windows.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopService()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/src/dotnet/ZebraPuma.System.ServiceProcess/ServiceBaseExtended.cs/#L17" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © 2025-2026 Régis SCYEUR - Zebra Puma Services. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

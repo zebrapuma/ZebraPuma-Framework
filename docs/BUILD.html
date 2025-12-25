@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>DocFX Build &amp; Preview | ZebraPuma Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="DocFX Build &amp; Preview | ZebraPuma Documentation ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/docs/BUILD.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="ZebraPuma">
+            ZebraPuma
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="docfx-build--preview">DocFX Build &amp; Preview</h1>
+
+<p>Ce guide explique comment compiler et prévisualiser la documentation.</p>
+<h2 id="installation-de-docfx">Installation de DocFX</h2>
+<pre><code class="lang-powershell"># Installer DocFX globalement
+dotnet tool install -g docfx
+
+# Ou mettre à jour si déjà installé
+dotnet tool update -g docfx
+</code></pre>
+<h2 id="génération-de-la-documentation">Génération de la Documentation</h2>
+<h3 id="générer-les-métadonnées-api">Générer les métadonnées API</h3>
+<pre><code class="lang-powershell"># Depuis le répertoire docs/
+docfx metadata docfx.json
+</code></pre>
+<p>Cela génère les fichiers YAML dans <code>docs/api/</code> à partir de vos assemblies .NET.</p>
+<h3 id="compiler-la-documentation">Compiler la documentation</h3>
+<pre><code class="lang-powershell"># Compilation complète
+docfx build docfx.json
+
+# Compilation avec logs détaillés
+docfx build docfx.json --log verbose
+</code></pre>
+<p>Le site est généré dans <code>docs/_site/</code>.</p>
+<h3 id="prévisualiser-localement">Prévisualiser localement</h3>
+<pre><code class="lang-powershell"># Serveur local avec auto-refresh
+docfx serve docs/_site
+
+# Puis ouvrir http://localhost:8080
+</code></pre>
+<h2 id="one-liner-build--serve">One-Liner: Build + Serve</h2>
+<pre><code class="lang-powershell"># Tout en une commande
+docfx docfx.json --serve
+</code></pre>
+<h2 id="structure-générée">Structure Générée</h2>
+<pre><code>docs/
+├── _site/              # Site web généré (à déployer)
+│   ├── index.html
+│   ├── articles/
+│   ├── api/
+│   ├── styles/
+│   └── ...
+└── api/                # Métadonnées API (générées)
+    ├── index.md
+    └── *.yml
+</code></pre>
+<h2 id="nettoyage">Nettoyage</h2>
+<pre><code class="lang-powershell"># Supprimer les fichiers générés
+Remove-Item -Recurse -Force docs/_site, docs/api, docs/obj
+</code></pre>
+<h2 id="problèmes-courants">Problèmes Courants</h2>
+<h3 id="erreur-no-project-found">Erreur: &quot;No project found&quot;</h3>
+<p><strong>Solution</strong>: Vérifiez que vos projets sont compilés:</p>
+<pre><code class="lang-powershell">dotnet build src/dotnet/ZebraPuma.sln --configuration Release
+</code></pre>
+<h3 id="erreur-docfx-not-found">Erreur: &quot;docfx not found&quot;</h3>
+<p><strong>Solution</strong>: Vérifiez l'installation:</p>
+<pre><code class="lang-powershell">dotnet tool list -g
+</code></pre>
+<h3 id="liens-cassés">Liens cassés</h3>
+<p><strong>Solution</strong>: Utilisez des chemins relatifs corrects (<code>../index.md</code> pour remonter d'un niveau).</p>
+<h2 id="cicd">CI/CD</h2>
+<p>Voir <code>.github/workflows/documentation.yml</code> pour le workflow GitHub Actions.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZebraPumaOrg/ZebraPuma/blob/main/docs/BUILD.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © 2025-2026 Régis SCYEUR - Zebra Puma Services. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
