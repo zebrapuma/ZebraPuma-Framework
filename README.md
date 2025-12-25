@@ -1,8 +1,8 @@
 # Zebra Puma Framework
 
-[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://zebrapumaorg.github.io/ZebraPuma-Packages/)
-[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages)
-[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://zebrapumaorg.github.io/ZebraPuma-Framework/)
+[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Framework)
+[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Framework)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
 
 > Services & Plugins pour Windows et .NET
@@ -11,7 +11,7 @@ Framework .NET pour créer des applications modulaires avec système de plugins 
 
 ## 📚 Documentation
 
-**[📖 Consultez la documentation complète →](https://zebrapumaorg.github.io/ZebraPuma-Packages/)**
+**[📖 Consultez la documentation complète →](https://zebrapumaorg.github.io/ZebraPuma-Framework/)**
 
 ## 📦 Packages Disponibles
 
@@ -109,16 +109,16 @@ ServiceManager.InstallService(new MonService());
 
 ## 📖 Guides
 
-- [Guide Plugins](https://zebrapumaorg.github.io/ZebraPuma-Packages/articles/plugins.html) - Architecture, chargement, cycle de vie
-- [Guide Services Windows](https://zebrapumaorg.github.io/ZebraPuma-Packages/articles/serviceprocess.html) - Création, déploiement, gestion
-- [Référence API](https://zebrapumaorg.github.io/ZebraPuma-Packages/api/) - Documentation complète de l'API
+- [Guide Plugins](https://zebrapumaorg.github.io/ZebraPuma-Framework/articles/plugins.html) - Architecture, chargement, cycle de vie
+- [Guide Services Windows](https://zebrapumaorg.github.io/ZebraPuma-Framework/articles/serviceprocess.html) - Création, déploiement, gestion
+- [Référence API](https://zebrapumaorg.github.io/ZebraPuma-Framework/api/) - Documentation complète de l'API
 
 ## 🔗 Liens Utiles
 
-- 📦 [Packages NuGet](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Packages)
-- 📚 [Documentation](https://zebrapumaorg.github.io/ZebraPuma-Packages/)
+- 📦 [Packages NuGet](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Framework)
+- 📚 [Documentation](https://zebrapumaorg.github.io/ZebraPuma-Framework/)
 - 📄 [Licence](LICENSE)
-- 🐛 [Issues](https://github.com/ZebraPumaOrg/ZebraPuma-Packages/issues)
+- 🐛 [Issues](https://github.com/ZebraPumaOrg/ZebraPuma-Framework/issues)
 
 ## 🛠️ Technologies
 
