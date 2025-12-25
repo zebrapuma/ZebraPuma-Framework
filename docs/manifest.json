@@ -305,6 +305,16 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/ZEBRAPUMA.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/ZEBRAPUMA.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
