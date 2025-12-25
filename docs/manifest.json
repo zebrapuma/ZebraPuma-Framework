@@ -306,10 +306,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/ZEBRAPUMA.jpg",
+      "source_relative_path": "images/ZEBRAPUMA-LOGO.png",
       "output": {
         "resource": {
-          "relative_path": "images/ZEBRAPUMA.jpg"
+          "relative_path": "images/ZEBRAPUMA-LOGO.png"
         }
       },
       "version": ""
