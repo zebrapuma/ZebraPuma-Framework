@@ -137,8 +137,5 @@ Voir [LICENSE](LICENSE) pour plus de détails.
 
 ## 👤 Auteur
 
-**Régis SCYEUR** - Zebra Puma Services
+**Régis SCYEUR** - Zebra Puma Services - [![Régis SCYEUR](https://img.shields.io/badge/GitHub-Regis--Scyeur-181717?style=flat&logo=github)](https://github.com/Regis-Scyeur)
 
----
-
-Made with ❤️ by Régis SCYEUR, Zebra Puma Services
