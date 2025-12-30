@@ -1,8 +1,8 @@
 # Zebra Puma Framework
 
-[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://zebrapumaorg.github.io/ZebraPuma-Framework/)
-[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Framework)
-[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Framework)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://zebrapuma.github.io/ZebraPuma-Framework/)
+[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/ZebraPuma-Framework/packages?repo_name=ZebraPuma-Framework)
+[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/ZebraPuma-Framework/packages?repo_name=ZebraPuma-Framework)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
 
 > Services & Plugins pour Windows et .NET
@@ -11,7 +11,7 @@ Framework .NET pour créer des applications modulaires avec système de plugins 
 
 ## 📚 Documentation
 
-**[📖 Consultez la documentation complète →](https://zebrapumaorg.github.io/ZebraPuma-Framework/)**
+**[📖 Consultez la documentation complète →](https://zebrapuma.github.io/ZebraPuma-Framework/)**
 
 ## 📦 Packages Disponibles
 
