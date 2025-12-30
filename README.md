@@ -1,8 +1,8 @@
 # Zebra Puma Framework
 
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://zebrapuma.github.io/ZebraPuma-Framework/)
-[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.Plugins)
-[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.System.ServiceProcess)
+[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/orgs/zebrapuma/packages?repo_name=ZebraPuma-Framework)
+[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/orgs/zebrapuma/packages?repo_name=ZebraPuma-Framework)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
 
 > Services & Plugins pour Windows et .NET
@@ -17,8 +17,8 @@ Framework .NET pour créer des applications modulaires avec système de plugins 
 
 | Package | Version | Description |
 |---------|---------|-------------|
-| **[ZebraPuma.Plugins](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.Plugins)** | [![Version](https://img.shields.io/badge/version-2.0.6-green)](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.Plugins) | Système de plugins extensible |
-| **[ZebraPuma.System.ServiceProcess](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.System.ServiceProcess)** | [![Version](https://img.shields.io/badge/version-2.0.6-green)](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.System.ServiceProcess) | Extensions pour services Windows |
+| **[ZebraPuma.Plugins](https://github.com/orgs/zebrapuma/packages?repo_name=ZebraPuma-Framework)** | [![Version](https://img.shields.io/badge/version-2.0.6-green)](https://github.com/orgs/zebrapuma/packages?repo_name=ZebraPuma-Framework) | Système de plugins extensible |
+| **[ZebraPuma.System.ServiceProcess](https://github.com/orgs/zebrapuma/packages?repo_name=ZebraPuma-Framework)** | [![Version](https://img.shields.io/badge/version-2.0.6-green)](https://github.com/orgs/zebrapuma/packages?repo_name=ZebraPuma-Framework) | Extensions pour services Windows |
 
 ## 🚀 Installation
 
