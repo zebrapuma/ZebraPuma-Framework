@@ -17,8 +17,8 @@ Framework .NET pour créer des applications modulaires avec système de plugins 
 
 | Package | Version | Description |
 |---------|---------|-------------|
-| **ZebraPuma.Plugins** | ![Version](https://img.shields.io/badge/version-2.0.6-green) | Système de plugins extensible |
-| **ZebraPuma.System.ServiceProcess** | ![Version](https://img.shields.io/badge/version-2.0.6-green) | Extensions pour services Windows |
+| **[ZebraPuma.Plugins](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.Plugins)** | [![Version](https://img.shields.io/badge/version-2.0.6-green)](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.Plugins) | Système de plugins extensible |
+| **[ZebraPuma.System.ServiceProcess](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.System.ServiceProcess)** | [![Version](https://img.shields.io/badge/version-2.0.6-green)](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.System.ServiceProcess) | Extensions pour services Windows |
 
 ## 🚀 Installation
 
@@ -129,7 +129,7 @@ ServiceManager.InstallService(new MonService());
 
 ## 👤 Auteur
 
-**Régis SCYEUR** [![Régis SCYEUR](https://img.shields.io/badge/GitHub-Regis--Scyeur-181717?style=flat&logo=github)](https://github.com/Regis-Scyeur) 
+**Régis SCYEUR** [![Régis SCYEUR](https://img.shields.io/badge/GitHub-Regis--Scyeur-181717?style=flat&logo=github)](https://github.com/Regis-Scyeur) \
 **Zebra Puma Services** [![Zebra Puma](https://img.shields.io/badge/GitHub-ZebraPuma-181717?style=flat&logo=github)](https://github.com/ZebraPuma)
 
 ## 📄 Licence
