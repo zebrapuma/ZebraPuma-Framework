@@ -109,14 +109,14 @@ ServiceManager.InstallService(new MonService());
 
 ## 📖 Guides
 
-- [Guide Plugins](https://zebrapumaorg.github.io/ZebraPuma-Framework/articles/plugins.html) - Architecture, chargement, cycle de vie
-- [Guide Services Windows](https://zebrapumaorg.github.io/ZebraPuma-Framework/articles/serviceprocess.html) - Création, déploiement, gestion
-- [Référence API](https://zebrapumaorg.github.io/ZebraPuma-Framework/api/) - Documentation complète de l'API
+- [Guide Plugins](https://zebrapuma.github.io/ZebraPuma-Framework/articles/plugins.html) - Architecture, chargement, cycle de vie
+- [Guide Services Windows](https://zebrapuma.github.io/ZebraPuma-Framework/articles/serviceprocess.html) - Création, déploiement, gestion
+- [Référence API](https://zebrapuma.github.io/ZebraPuma-Framework/api/) - Documentation complète de l'API
 
 ## 🔗 Liens Utiles
 
-- 📦 [Packages NuGet](https://github.com/orgs/ZebraPumaOrg/packages?repo_name=ZebraPuma-Framework)
-- 📚 [Documentation](https://zebrapumaorg.github.io/ZebraPuma-Framework/)
+- 📦 [Packages NuGet](https://github.com/orgs/ZebraPuma-Framework/packages?repo_name=ZebraPuma-Framework)
+- 📚 [Documentation](https://zebrapuma.github.io/ZebraPuma-Framework/)
 - 📄 [Licence](LICENSE)
 - 🐛 [Issues](https://github.com/ZebraPumaOrg/ZebraPuma-Framework/issues)
 
@@ -127,15 +127,16 @@ ServiceManager.InstallService(new MonService());
 - **Windows Services** - Services natifs Windows
 - **Plugin Architecture** - Système modulaire extensible
 
+## 👤 Auteur
+
+**Régis SCYEUR** [![Régis SCYEUR](https://img.shields.io/badge/GitHub-Regis--Scyeur-181717?style=flat&logo=github)](https://github.com/Regis-Scyeur) 
+**Zebra Puma Services** [![Zebra Puma](https://img.shields.io/badge/GitHub-ZebraPuma-181717?style=flat&logo=github)](https://github.com/ZebraPuma)
+
 ## 📄 Licence
 
 **Propriétaire** - © 2025-2026 Régis SCYEUR, Zebra Puma Services
-
 Tous droits réservés. L'utilisation commerciale nécessite une licence payante.
 
 Voir [LICENSE](LICENSE) pour plus de détails.
 
-## 👤 Auteur
-
-**Régis SCYEUR** - Zebra Puma Services - [![Régis SCYEUR](https://img.shields.io/badge/GitHub-Regis--Scyeur-181717?style=flat&logo=github)](https://github.com/Regis-Scyeur)
 
