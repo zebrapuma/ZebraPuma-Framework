@@ -1,8 +1,8 @@
 # Zebra Puma Framework
 
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://zebrapuma.github.io/ZebraPuma-Framework/)
-[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/ZebraPuma-Framework/packages?repo_name=ZebraPuma-Framework)
-[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/ZebraPuma-Framework/packages?repo_name=ZebraPuma-Framework)
+[![NuGet Plugins](https://img.shields.io/badge/NuGet-Plugins-blue)](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.Plugins)
+[![NuGet ServiceProcess](https://img.shields.io/badge/NuGet-ServiceProcess-blue)](https://github.com/zebrapuma/ZebraPuma-Framework/pkgs/nuget/ZebraPuma.System.ServiceProcess)
 [![License](https://img.shields.io/badge/License-Proprietary-red)](LICENSE)
 
 > Services & Plugins pour Windows et .NET
@@ -111,11 +111,11 @@ ServiceManager.InstallService(new MonService());
 
 - [Guide Plugins](https://zebrapuma.github.io/ZebraPuma-Framework/articles/plugins.html) - Architecture, chargement, cycle de vie
 - [Guide Services Windows](https://zebrapuma.github.io/ZebraPuma-Framework/articles/serviceprocess.html) - Création, déploiement, gestion
-- [Référence API](https://zebrapuma.github.io/ZebraPuma-Framework/api/) - Documentation complète de l'API
+- [Référence API](https://zebrapuma.github.io/ZebraPuma-Framework/api/ZebraPuma.html) - Documentation complète de l'API
 
 ## 🔗 Liens Utiles
 
-- 📦 [Packages NuGet](https://github.com/orgs/ZebraPuma-Framework/packages?repo_name=ZebraPuma-Framework)
+- 📦 [Packages NuGet](https://github.com/orgs/zebrapuma/packages?repo_name=ZebraPuma-Framework)
 - 📚 [Documentation](https://zebrapuma.github.io/ZebraPuma-Framework/)
 - 📄 [Licence](LICENSE)
 - 🐛 [Issues](https://github.com/ZebraPumaOrg/ZebraPuma-Framework/issues)
@@ -134,9 +134,7 @@ ServiceManager.InstallService(new MonService());
 
 ## 📄 Licence
 
-**Propriétaire** - © 2025-2026 Régis SCYEUR, Zebra Puma Services
-Tous droits réservés. L'utilisation commerciale nécessite une licence payante.
-
-Voir [LICENSE](LICENSE) pour plus de détails.
+© 2025-2026 Régis SCYEUR - Zebra Puma Services. Tous droits réservés. \
+L'utilisation commerciale nécessite une licence payante. Voir [LICENSE](LICENSE) pour plus de détails.
 
 
